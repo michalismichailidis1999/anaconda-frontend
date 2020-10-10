@@ -1,0 +1,110 @@
+.business-details {
+    .box-title {
+        width: 80%;
+        font-weight: normal;
+        font-size: 1.6rem;
+        color: #111;
+        margin: 0 auto;
+        margin-bottom: 40px;
+        i {
+            margin-left: 5px;
+            color: rgb(73, 218, 104);
+        }
+    }
+    .boxes {
+        margin: 0 auto;
+        margin-top: 20px;
+        margin-bottom: 80px;
+        display: grid;
+        width: 80%;
+        grid-template-columns: repeat(3, 1fr);
+        grid-row-gap: 50px;
+        grid-column-gap: 100px;
+        .box {
+            padding: 25px 15px;
+            @include flexCenterRow();
+            border-radius: 5px;
+            color: white;
+            transition: all 0.2s ease-in;
+            &:hover {
+                transform: translateY(-7px) scale(1.1);
+                cursor: pointer;
+            }
+            &.orders-box {
+                background: $orders-box-bg;
+                &:hover {
+                    background: $orders-box-bg-hover;
+                }
+            }
+            &.users-box {
+                background: $users-box-bg;
+                &:hover {
+                    background: $users-box-bg-hover;
+                }
+            }
+            &.messages-box {
+                background: $messages-box-bg;
+                &:hover {
+                    background: $messages-box-bg-hover;
+                }
+            }
+            &.products-box {
+                background: $products-box-bg;
+                &:hover {
+                    background: $products-box-bg-hover;
+                }
+            }
+            &.categories-box {
+                background: $categories-box-bg;
+                &:hover {
+                    background: $categories-box-bg-hover;
+                }
+            }
+            &.profit-box {
+                background: $profit-box-bg;
+                &:hover {
+                    background: $profit-box-bg-hover;
+                }
+            }
+            &.monthly-profit-box {
+                background: $monthly-profit-box-bg;
+                &:hover {
+                    background: $monthly-profit-box-bg-hover;
+                }
+            }
+            .box-icon {
+                @include flexCenterRow();
+                margin-right: 30px;
+                font-size: 2.5rem;
+            }
+            .box-text {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: flex-start;
+                span {
+                    &:first-child {
+                        margin-bottom: 10px;
+                        font-size: 1.3rem;
+                    }
+                    &:last-child {
+                        font-size: 0.85rem;
+                    }
+                }
+            }
+        }
+    }
+    .charts {
+        width: 80%;
+        margin: 0 auto;
+        @include flexCenterColumn();
+        margin-bottom: 40px;
+        .chart {
+            width: 100%;
+            margin-bottom: 20px;
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+}

@@ -1,0 +1,45 @@
+.table {
+  border-collapse: collapse;
+  box-shadow: 1px 1px 9px 3px rgba(0, 0, 0, 0.13);
+  thead {
+    background: #52be48;
+    color: white;
+    th {
+      padding: 10px;
+      text-align: center;
+    }
+  }
+  tbody {
+    tr {
+      border-bottom: 1px solid #ccc;
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+    td {
+      padding: 10px;
+      text-align: center;
+      color: #111;
+      &.icon i {
+        cursor: pointer;
+        &:hover {
+          color: #333;
+        }
+      }
+      &.checked {
+        font-size: 1.1rem;
+        color: #28af1c;
+      }
+      &.unchecked {
+        font-size: 1.1rem;
+        color: #e72525;
+      }
+      &.stars {
+        i {
+          color: yellow;
+          font-size: 1.1rem;
+        }
+      }
+    }
+  }
+}

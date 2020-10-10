@@ -1,0 +1,27 @@
+.buttons {
+  margin-top: 20px;
+  .create-btn {
+    margin-top: 0;
+    margin-right: 20px;
+  }
+
+  .delete-btn {
+    padding: 5px 25px;
+    border-radius: 5px;
+    color: white;
+    background: rgb(216, 45, 32);
+    &:hover {
+      background: rgba(216, 45, 32, 0.9);
+    }
+  }
+}
+.create-btn {
+  margin-top: 20px;
+  padding: 5px 25px;
+  border-radius: 5px;
+  color: white;
+  background: rgb(23, 129, 103);
+  &:hover {
+    background: rgba(23, 129, 103, 0.9);
+  }
+}

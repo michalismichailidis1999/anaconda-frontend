@@ -1,0 +1,295 @@
+.above-nav {
+    background: $above-nav-bg;
+    color: white;
+    @include flexCenterRow();
+    font-family: "Roboto", sans-serif;
+    width: 100%;
+    height: 30px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    div {
+        width: 50%;
+        padding: 5px 30px;
+        span {
+            font-size: .8rem;
+            margin-right: 20px;
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+    .above-nav-section-1 {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+    .above-nav-section-2 {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        .above-nav-link {
+            text-decoration: none;
+            color: white;
+            &:hover {
+                color: #e5e5e5;
+            }
+        }
+        .space {
+            margin: 0 5px;
+        }
+    }
+}
+
+nav {
+    position: fixed;
+    top: 30px;
+    left: 0;
+    z-index: 100;
+    width: 100%;
+    height: 60px;
+    padding: 10px;
+    color: $navbar-color;
+    background: $navbar-bg;
+    font-family: $navbar-ff;
+    @include flexCenterRow();
+    .side-nav {
+        display: none;
+    }
+    .logo {
+        width: 30%;
+        @include flexCenterRow();
+        position: relative;
+        h1 {
+            font-size: 2.3rem;
+            text-transform: uppercase;
+            font-family: $logo-ff;
+            user-select: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            padding-top: 8px;
+        }
+    }
+    .nav-links {
+        width: 70%;
+        @include flexCenterRow();
+        ul {
+            width: 100%;
+            @include flexCenterRow();
+            .hamburger {
+                display: none;
+            }
+            li {
+                list-style: none;
+                margin-right: 30px;
+                &:last-child {
+                    margin-right: 0;
+                }
+            }
+        }
+    }
+    ul li:last-child .nav-link i {
+        position: relative;
+        margin-left: 0;
+        div {
+            width: 22px;
+            height: 22px;
+            position: absolute;
+            top: -13px;
+            right: -12px;
+            background: #222222;
+            color: white;
+            @include flexCenterRow();
+            font-size: 0.75rem;
+            border-radius: 50%;
+            span {
+                width: 100%;
+                text-align: center;
+                font-weight: bold;
+            }
+        }
+    }
+    .nav-link {
+        text-decoration: none;
+        color: $nav-links-color;
+        font-size: 1.1rem;
+        &:hover {
+            color: $nav-links-color-hover;
+            cursor: pointer;
+        }
+        i {
+            margin-left: 3px;
+        }
+    }
+}
+
+@media(max-width: 950px) {
+    nav {
+        .nav-link {
+            font-size: 1rem;
+        }
+    }
+}
+
+@media(max-width: 900px) {
+    nav {
+        .nav-link {
+            font-size: .9rem;
+        }
+        .logo h1 {
+            font-size: 1.9rem;
+        }
+    }
+}
+
+@media(max-width: 830px) {
+    nav {
+        .nav-links {
+            ul {
+                justify-content: flex-end;
+            }
+            .hamburger {
+                display: block !important;
+                color: white;
+                font-size: 1.5rem;
+                cursor: pointer;
+            }
+        }
+        .side-nav {
+            display: block;
+            position: fixed;
+            right: 0;
+            top: 90px;
+            background: $sidenav-bg;
+            color: white;
+            z-index: 4;
+            height: calc(100vh - 85px);
+            width: 180px;
+            ul {
+                padding: 10px;
+                width: 100%;
+                li {
+                    list-style: none;
+                    margin-bottom: 30px;
+                    width: 100%;
+                    @include flexCenterRow();
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+                    .nav-link {
+                        width: fit-content;
+                        font-size: 1rem;
+                    }
+                }
+            }
+        }
+        .if-sidebar-display-none {
+            display: none;
+        }
+    }
+}
+
+@media(max-width: 800px) {
+    .above-nav div span {
+        font-size: .7rem;
+    }
+}
+
+@media(max-width:725px) {
+    .above-nav {
+        .above-nav-section-1 span:last-child {
+            display: none;
+        }
+        // .above-nav-section-2 {}
+    }
+}
+
+@media(max-width:650px) {
+    nav {
+        .logo {
+            width: 40%;
+        }
+        .nav-links {
+            width: 60%;
+        }
+    }
+}
+
+@media(max-width:585px) {
+    .above-nav {
+        .above-nav-section-1 {
+            display: none;
+        }
+        .above-nav-section-2 {
+            width: 100%;
+        }
+    }
+}
+
+@media(max-width:490px) {
+    nav {
+        .logo {
+            width: 50%;
+            h1 {
+                font-size: 1.75rem;
+            }
+        }
+        .nav-links {
+            width: 50%;
+        }
+    }
+}
+
+@media(max-width: 480px) {
+    .above-nav {
+        .above-nav-section-2 {
+            justify-content: center;
+        }
+    }
+}
+
+@media(max-width: 375px) {
+    nav {
+        .logo h1 {
+            font-size: 1.6rem;
+        }
+        .nav-links .hamburger {
+            font-size: 1.4rem;
+            .nav-link {
+                font-size: .9rem;
+            }
+        }
+    }
+}
+
+@media(max-width: 330px) {
+    nav {
+        .logo h1 {
+            font-size: 1.4rem;
+        }
+        .nav-links .hamburger {
+            font-size: 1.2rem;
+            .nav-link {
+                font-size: .8rem;
+            }
+        }
+    }
+}
+
+@media(max-width: 305px) {
+    .above-nav-section-2 span:first-child {
+        display: none;
+    }
+    nav {
+        .logo h1 {
+            font-size: 1.3rem;
+        }
+        .nav-links .hamburger {
+            font-size: 1.1rem;
+            .nav-link {
+                font-size: .7rem;
+            }
+        }
+    }
+}

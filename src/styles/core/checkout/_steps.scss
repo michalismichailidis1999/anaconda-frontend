@@ -1,0 +1,48 @@
+.steps {
+    padding: 40px;
+    width: 100%;
+    position: relative;
+    @include flexCenterRow();
+    margin-bottom: 30px;
+    .step {
+        position: relative;
+        width: 80px;
+        height: 80px;
+        @include flexCenterRow();
+        border-radius: 50%;
+        color: white;
+        margin-right: 300px;
+        &:last-child {
+            margin-right: 0;
+        }
+        &.finished {
+            background: $finished-step-color;
+        }
+        &.current {
+            background: $current-step-color;
+        }
+        &.unfinished {
+            background: $unfinished-step-color;
+            color: $unfinished-step-icon-color;
+        }
+        span {
+            font-size: 1.6rem;
+            position: relative;
+        }
+        .step-transition-line {
+            width: 320px;
+            height: 15px;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 90%;
+            z-index: -1;
+            &.finished {
+                background: $finished-step-color;
+            }
+            &.unfinished {
+                background: $unfinished-transition-line-bg;
+            }
+        }
+    }
+}

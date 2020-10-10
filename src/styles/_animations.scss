@@ -1,0 +1,22 @@
+.loading {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    border: 1px solid #ddd;
+    border-right: 1px solid #25a151;
+    animation-name: loading;
+    animation-duration: .7s;
+    animation-timing-function: linear;
+    animation-play-state: running;
+    animation-iteration-count: infinite;
+    margin-left: 10px;
+}
+
+@keyframes loading {
+    from {
+        transform: rotateZ(0);
+    }
+    to {
+        transform: rotateZ(360deg);
+    }
+}

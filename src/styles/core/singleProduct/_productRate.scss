@@ -1,0 +1,99 @@
+.product-rate {
+    display: flex;
+    padding: 10px;
+    margin-bottom: 30px;
+    width: 100%;
+    .rates {
+        width: 50%;
+        h4 {
+            width: 80%;
+            margin: 0 auto;
+            margin-bottom: 20px;
+            color: #010101;
+            font-weight: normal;
+            font-size: 1.5rem;
+            i {
+                font-size: 1.3rem;
+                margin-left: 5px;
+                color: #030303;
+            }
+        }
+        .board {
+            width: 80%;
+            height: 250px;
+            margin: 0 auto;
+            display: flex;
+            .rate-names {
+                height: 100%;
+                width: 20%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: flex-start;
+                font-family: "Roboto", sans-serif;
+                span {
+                    margin-bottom: 25px;
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+                }
+            }
+            .percent-lines-box {
+                height: 100%;
+                width: 80%;
+                border-left: 1px solid #333;
+                border-bottom: 1px solid #333;
+                position: relative;
+                .percent-line {
+                    position: absolute;
+                    display: inline-block;
+                    height: 25px;
+                    left: 0;
+                }
+                span.perfect {
+                    background: $perfect-percent-line-bg;
+                    top: 25px;
+                }
+                span.good {
+                    background: $good-percent-line-bg;
+                    top: 70px;
+                }
+                span.moderate {
+                    background: $moderate-percent-line-bg;
+                    top: 115px;
+                }
+                span.bad {
+                    background: $bad-percent-line-bg;
+                    top: 160px;
+                }
+                span.very-bad {
+                    background: $very-bad-percent-line-bg;
+                    top: 205px;
+                }
+            }
+        }
+    }
+    .rate-product {
+        width: 50%;
+        @include flexCenterColumn();
+        justify-content: flex-start;
+        h4 {
+            color: #010101;
+            font-weight: normal;
+            font-size: 1.5rem;
+            border-bottom: 1px solid #010101;
+            padding: 0 10px;
+            margin-bottom: 10px;
+        }
+        .stars {
+            i {
+                margin-right: 10px;
+                font-size: 1.5rem;
+                cursor: pointer;
+                &:last-child {
+                    margin-right: 0;
+                }
+            }
+        }
+    }
+}

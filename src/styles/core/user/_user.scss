@@ -1,0 +1,8 @@
+.user {
+    min-height: 500px;
+    display: flex;
+    @import "./userSidebar";
+    @import "./userInfoBox";
+}
+
+@import "./userMediaQueries";

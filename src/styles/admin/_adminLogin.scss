@@ -1,0 +1,91 @@
+.admin-login {
+    width: 100vw;
+    height: 100vh;
+    @include flexCenterColumn();
+    form {
+        padding: 20px;
+        border: 3px solid #38a85f;
+        border-radius: 3px;
+        width: 450px;
+        h3 {
+            font-size: 1.4rem;
+            color: #111;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .input-group {
+            position: relative;
+            width: 100%;
+            margin-bottom: 20px;
+            &:last-child {
+                margin-bottom: 35px;
+            }
+            input {
+                padding: 5px;
+                padding-left: 40px;
+                width: 100%;
+                height: 35px;
+                border: 2px solid #ccc;
+                outline: none;
+                border-radius: 3px;
+            }
+            span {
+                position: absolute;
+                @include flexCenterRow();
+                top: 0px;
+                left: 0px;
+                height: 35px;
+                width: 35px;
+                border-right: 2px solid #ccc;
+                border-top-right-radius: 15px;
+                border-bottom-right-radius: 15px;
+                color: #777;
+            }
+        }
+        .has-error {
+            input {
+                border-color: $error;
+                &::placeholder {
+                    color: $error;
+                }
+            }
+            span {
+                color: $error;
+            }
+        }
+        .form-btn {
+            width: 100%;
+            @include flexCenterRow();
+            button {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 5px 30px;
+                background: #38a85f;
+                color: white;
+                &:hover {
+                    background: #38a85fe1;
+                }
+                &.disabled {
+                    cursor: not-allowed;
+                    &:hover {
+                        background: #38a85f;
+                    }
+                }
+            }
+        }
+    }
+    .error-message {
+        margin: 0 auto;
+        margin-bottom: 20px;
+        width: 80%;
+        p {
+            width: 100%;
+            padding: 20px;
+            background: #e3786b;
+            color: white;
+            text-align: center;
+            letter-spacing: .6px;
+        }
+    }
+}

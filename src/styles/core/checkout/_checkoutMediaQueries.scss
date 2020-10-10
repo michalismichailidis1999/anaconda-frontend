@@ -1,0 +1,340 @@
+@media(max-width: 960px) {
+    .checkout {
+        .steps {
+            .step {
+                width: 70px;
+                height: 70px;
+                margin-right: 250px;
+                span {
+                    font-size: 1.4rem;
+                }
+                .step-transition-line {
+                    width: 270px;
+                    height: 15px;
+                }
+            }
+        }
+    }
+}
+
+@media(max-width: 900px) {
+    .checkout {
+        .user-details-form {
+            width: 400px;
+            h4 {
+                font-size: 1.2rem;
+            }
+            .input-group {
+                label {
+                    font-size: .9rem;
+                }
+                input {
+                    font-size: .8rem;
+                }
+            }
+            button {
+                font-size: .9rem;
+            }
+        }
+        .form-error {
+            p {
+                font-size: .95rem;
+            }
+        }
+    }
+}
+
+@media(max-width: 785px) {
+    .checkout {
+        .steps {
+            .step {
+                width: 60px;
+                height: 60px;
+                margin-right: 200px;
+                span {
+                    font-size: 1.2rem;
+                }
+                .step-transition-line {
+                    width: 220px;
+                    height: 10px;
+                }
+            }
+        }
+    }
+}
+
+@media(max-width: 750px) {
+    .checkout {
+        .ways-to-choose {
+            .order-total-price {
+                width: 280px;
+                div {
+                    span {
+                        font-size: 1rem;
+                    }
+                }
+            }
+            h4 {
+                font-size: 1.2rem;
+            }
+            .radio-cards {
+                .radio-card {
+                    .radio {
+                        width: 25px;
+                        height: 25px;
+                        .checked {
+                            height: 15px;
+                            width: 15px;
+                        }
+                    }
+                    .text {
+                        font-size: .95rem;
+                    }
+                    .icon {
+                        font-size: 1rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media(max-width: 645px) {
+    .checkout {
+        .steps {
+            .step {
+                width: 60px;
+                height: 60px;
+                margin-right: 130px;
+                span {
+                    font-size: 1.2rem;
+                }
+                .step-transition-line {
+                    width: 140px;
+                }
+            }
+        }
+    }
+}
+
+@media(max-width: 615px) {
+    .checkout {
+        .user-details-form {
+            width: 350px;
+        }
+        .form-error {
+            width: 350px;
+        }
+    }
+}
+
+@media(max-width: 560px) {
+    .checkout {
+        .ways-to-choose {
+            h4 {
+                font-size: 1.1rem;
+                width: 350px;
+                text-align: center;
+            }
+        }
+    }
+}
+
+@media(max-width: 510px) {
+    .checkout {
+        .steps {
+            .step {
+                width: 50px;
+                height: 50px;
+                margin-right: 100px;
+                span {
+                    font-size: 1rem;
+                }
+                .step-transition-line {
+                    width: 120px;
+                }
+            }
+        }
+        .ways-to-choose {
+            .radio-cards {
+                width: 250px;
+                .radio-card {
+                    .radio {
+                        width: 20px;
+                        height: 20px;
+                        .checked {
+                            height: 10px;
+                            width: 10px;
+                        }
+                    }
+                    .text {
+                        font-size: .95rem;
+                    }
+                    .icon {
+                        font-size: 1rem;
+                    }
+                }
+            }
+            button {
+                font-size: .8rem;
+            }
+            .card-element-container {
+                width: 280px;
+                margin-left: -15px;
+            }
+        }
+    }
+}
+
+@media(max-width: 465px) {
+    .checkout {
+        .user-details-form {
+            width: 280px;
+            h4 {
+                font-size: 1rem;
+            }
+            .input-group {
+                label {
+                    font-size: .8rem;
+                }
+                input {
+                    font-size: .75rem;
+                }
+            }
+            button {
+                font-size: .8rem;
+            }
+        }
+        .form-error {
+            width: 280px;
+            p {
+                font-size: .85rem;
+            }
+        }
+    }
+}
+
+@media(max-width: 450px) {
+    .checkout {
+        .ways-to-choose {
+            .order-total-price {
+                width: 250px;
+                div {
+                    span {
+                        font-size: .9rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media(max-width: 415px) {
+    .checkout {
+        .ways-to-choose {
+            h4 {
+                font-size: 1rem;
+                width: 280px;
+                text-align: center;
+            }
+        }
+    }
+}
+
+@media(max-width: 410px) {
+    .checkout {
+        .steps {
+            .step {
+                width: 45px;
+                height: 45px;
+                margin-right: 80px;
+                span {
+                    font-size: .9rem;
+                }
+                .step-transition-line {
+                    width: 100px;
+                }
+            }
+        }
+    }
+}
+
+@media(max-width: 360px) {
+    .checkout {
+        .user-details-form {
+            width: 240px;
+            h4 {
+                font-size: .95rem;
+            }
+            .input-group {
+                label {
+                    font-size: .7rem;
+                }
+                input {
+                    font-size: .7rem;
+                }
+            }
+            button {
+                font-size: .7rem;
+            }
+        }
+        .form-error {
+            width: 240px;
+            p {
+                line-height: 1.5;
+                font-size: .75rem;
+            }
+        }
+    }
+}
+
+@media(max-width: 350px) {
+    .checkout {
+        .steps {
+            .step {
+                margin-right: 40px;
+                .step-transition-line {
+                    width: 60px;
+                    height: 7px;
+                }
+            }
+        }
+        .ways-to-choose {
+            h4 {
+                font-size: .95rem;
+                width: 250px;
+                text-align: center;
+            }
+            .card-element-container {
+                width: 220px;
+                margin-left: 17.5px;
+            }
+        }
+    }
+}
+
+@media(max-width: 325px) {
+    .checkout {
+        .ways-to-choose {
+            .radio-cards {
+                width: 220px;
+                .radio-card {
+                    .radio {
+                        width: 20px;
+                        height: 20px;
+                        .checked {
+                            height: 10px;
+                            width: 10px;
+                        }
+                    }
+                    .text {
+                        font-size: .85rem;
+                    }
+                    .icon {
+                        font-size: .9rem;
+                    }
+                }
+            }
+        }
+    }
+}

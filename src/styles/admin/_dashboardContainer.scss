@@ -1,0 +1,73 @@
+.dashboard-container {
+  height: 100%;
+  width: calc(100vw - 200px) !important;
+  margin-left: 200px;
+  @import "./businessDetails";
+  h2 {
+    color: #111;
+    text-align: center;
+    padding: 20px 10px;
+    i {
+      margin-left: 10px;
+    }
+  }
+  @import "./tickBox";
+  @import "./table";
+  .empty-message,
+  .loading-message {
+    font-size: 1.5rem;
+  }
+  @import "./ticks";
+  @import "./adminButtons";
+  @import "./adminForm";
+  @import "./adminOrders";
+  .products-admin {
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: 60px;
+    .show-products {
+      display: flex;
+      .table {
+        tbody td {
+          height: 80px !important;
+          img {
+            max-height: 100%;
+          }
+        }
+      }
+    }
+  }
+  .categories-admin {
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: 60px;
+    .show-categories {
+      .btn-container {
+        width: 350px;
+        margin: 0 auto;
+        button {
+          margin-bottom: 20px;
+        }
+      }
+      .table {
+        width: 350px;
+        margin: 0 auto;
+        tbody td {
+          height: 80px !important;
+          img {
+            max-height: 100%;
+          }
+        }
+      }
+    }
+  }
+  .users {
+    width: 80%;
+    margin: 0 auto;
+    margin-bottom: 60px;
+    .table {
+      width: 100%;
+    }
+  }
+  @import "./adminMessages";
+}

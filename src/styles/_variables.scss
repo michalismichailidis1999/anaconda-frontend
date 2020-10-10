@@ -1,0 +1,91 @@
+// Navbar
+$navbar-ff: "Oswald", sans-serif;
+$navbar-bg: #43d175;
+$sidenav-bg: #38a85f;
+$navbar-color: white;
+$nav-links-color: white;
+$nav-links-color-hover: #e5e5e5;
+$logo-ff: "Josefin Sans", sans-serif;
+$sublist-bg: #49fc7c;
+$above-nav-bg: #25a151;
+// --------------------------------------------------------
+// Products
+$card-ff: "Roboto", sans-serif;
+$card-body-padding: 15px;
+$card-body-bg: #f8f2f2;
+$card-body-h2-color: #221f1f;
+$card-body-p-color: #302c2c;
+$card-view-details-color: #5ec0ea;
+$card-button-bg: #55b66a;
+$card-button-bg-hover: #55b66ae1;
+$available-product-bg: #3fd360;
+$limited-product-bg: #d6ec51;
+$non-available-product-bg: #ea5248;
+//----------------------------------------------------------
+// Form
+$error: #e3786b;
+// -----------------------------------------------------------
+// Shop
+$page-color: #147536;
+// -----------------------------------------------------------
+// Cart
+$cart-main-black: #1c1a1a;
+$cart-container-bg: linear-gradient(117.55deg, #4ee74b 0%, #277e25 100%);
+$quantity-btn-bg: #4ee74b;
+$quantity-btn-bg-hover: #4ee74be1;
+$remove-cart-item-btn-bg: #e03838;
+$remove-cart-item-btn-bg-hover: #e03838e1;
+$cart-item-category-color: #863232;
+$cart-item-box-shadow: 1px 1px 8px 3px
+  rgba(
+    $color: #000000,
+    $alpha: 0.3,
+  );
+// -----------------------------------------------------------
+// Contact
+$contact-container-shadow-box: 1px 1px 9px 3px rgba(0, 0, 0, 0.13);
+$contact-details-bg: #52be48;
+$contact-message-bg: #f8f2f2;
+$contact-message-btn-bg: #52be48;
+$contact-message-btn-bg-hover: #52be48e1;
+// --------------------------------------------------------------
+// Single Product
+$perfect-percent-line-bg: #156b14;
+$good-percent-line-bg: #3abf38;
+$moderate-percent-line-bg: #d6d938;
+$bad-percent-line-bg: #e13f35;
+$very-bad-percent-line-bg: #871515;
+// --------------------------------------------------------------------
+// Checkout
+$current-step-color: #81d6e9;
+$finished-step-color: #5de451;
+$unfinished-step-color: #efe5e5;
+$unfinished-step-icon-color: #867c7c;
+$unfinished-transition-line-bg: #edf1ec;
+$user-details-error-color: #f86262;
+$details-form-bg: #eee7e7;
+$details-form-box-shadow: 2px 2px 18px 3px rgba(0, 0, 0, 0.2);
+$radio-card-box-shadow: 2px 2px 7px 2px rgba(0, 0, 0, 0.2);
+$end-order-btn-bg: #5de451;
+$end-order-btn-bg-hover: #5de451e1;
+// ----------------------------------------------------------------------
+// Admin
+$orders-box-bg: #8acd55;
+$orders-box-bg-hover: #8acd55e1;
+$users-box-bg: #b84a43;
+$users-box-bg-hover: #b84a43e1;
+$messages-box-bg: #2b8c5d;
+$messages-box-bg-hover: #2b8c5de1;
+$products-box-bg: #c78f3c;
+$products-box-bg-hover: #c78f3ce1;
+$categories-box-bg: #7539a4;
+$categories-box-bg-hover: #7539a4e1;
+$profit-box-bg: #3496b5;
+$profit-box-bg-hover: #3496b5e1;
+$monthly-profit-box-bg: #630d4b;
+$monthly-profit-box-bg-hover: #630d4be1;
+$save-button-bg: #278653;
+$save-button-bg-hover: #278653e1;
+$delete-button-bg: #c75049;
+$delete-button-bg-hover: #c75049e1;
+// -----------------------------------------------------------------------

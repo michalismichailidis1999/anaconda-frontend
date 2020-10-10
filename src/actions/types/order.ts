@@ -1,0 +1,6 @@
+export const GET_ORDERS = "GET_ORDERS";
+export const GET_ORDER = "GET_ORDER";
+export const CREATE_ORDER = "CREATE_ORDER";
+export const NOTIFICATIONS_SENT = "NOTIFICATIONS_SENT";
+export const FETCHING_ORDERS = "FETCHING_ORDERS";
+export const GET_TOTAL_PAGES = "GET_TOTAL_PAGES";

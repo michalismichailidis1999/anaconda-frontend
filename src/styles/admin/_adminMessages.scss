@@ -1,0 +1,95 @@
+.messages {
+  width: 90%;
+  margin: 0 auto;
+  margin-bottom: 60px;
+  font-family: "Roboto", sans-serif;
+  .show-messages {
+    width: 100%;
+    display: flex;
+  }
+  .message {
+    display: flex;
+    width: 100%;
+    .message-left {
+      width: 350px;
+      h3 {
+        margin-bottom: 20px;
+      }
+      ul {
+        margin-bottom: 20px;
+        li {
+          list-style: none;
+          margin-bottom: 10px;
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
+      }
+      .clickables {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+
+        div {
+          margin-bottom: 15px;
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+          span {
+            margin-right: 5px;
+          }
+        }
+
+        button {
+          margin-bottom: 15px;
+          padding: 5px 25px;
+          color: white;
+          border-radius: 5px;
+          &.save-btn {
+            background: $save-button-bg;
+            &:hover {
+              background: $save-button-bg-hover;
+            }
+          }
+          &.delete-btn {
+            background: $delete-button-bg;
+            &:hover {
+              background: $delete-button-bg-hover;
+            }
+          }
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+    .message-right {
+      width: calc(100% - 350px);
+      padding: 20px;
+      h3 {
+        text-align: center;
+        margin-bottom: 20px;
+        font-size: 1.5rem;
+      }
+      p {
+        font-size: 0.95rem;
+        line-height: 1.6;
+        letter-spacing: 0.4px;
+        margin-bottom: 30px;
+      }
+      textarea {
+        resize: none;
+        display: block;
+        width: 100%;
+        height: 180px;
+        outline: none;
+        border: 1px solid #333;
+        border-radius: 5px;
+        padding: 5px;
+        margin-bottom: 10px;
+        font-size: 1rem;
+      }
+    }
+  }
+}

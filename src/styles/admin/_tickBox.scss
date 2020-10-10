@@ -1,0 +1,25 @@
+.tick-box {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  border-radius: 3px;
+  position: relative;
+  &.ticked {
+    background: rgb(14, 32, 197);
+    border: 1px solid rgb(14, 32, 197);
+    &::after {
+      content: "\2713";
+      position: absolute;
+      font-size: 1rem;
+      top: -3px;
+      left: 3px;
+      color: white;
+    }
+  }
+  &.unticked {
+    color: #111;
+    background: white;
+    border: 1px solid #111;
+  }
+}

@@ -1,0 +1,12 @@
+.single-product {
+    min-height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    @import "./singleProductDetails";
+    @import "./productRate";
+    @import "./productComments";
+}
+
+@import "./singleProductMediaQueries";

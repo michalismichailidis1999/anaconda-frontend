@@ -1,0 +1,23 @@
+.ticks {
+  width: 200px;
+  margin-right: 20px;
+  h4 {
+    margin-bottom: 10px;
+  }
+  ul {
+    li {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      margin-bottom: 10px;
+      color: #111;
+      &:last-child {
+        margin-bottom: 0;
+      }
+      .tick-box {
+        margin-right: 10px;
+      }
+    }
+  }
+}

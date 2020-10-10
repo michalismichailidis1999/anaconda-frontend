@@ -1,0 +1,311 @@
+@media(max-width: 1025px) {
+    .user {
+        .user-info-box {
+            .my-orders {
+                table {
+                    thead {
+                        th {
+                            padding: 7px;
+                            font-size: 1rem;
+                        }
+                    }
+                    tbody {
+                        td {
+                            padding: 7px;
+                            font-size: .8rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media(max-width: 950px) {
+    .user {
+        .user-sidebar {
+            h4 {
+                font-size: 1.2rem;
+            }
+            ul li {
+                padding: 10px 5px;
+                font-size: .95rem;
+            }
+        }
+        .user-info-box {
+            .welcome-message h2 {
+                font-size: 1.5rem;
+            }
+        }
+    }
+}
+
+@media(max-width: 890px) {
+    .user {
+        .user-info-box {
+            .my-orders {
+                table {
+                    thead {
+                        th {
+                            padding: 7px;
+                            font-size: .8rem;
+                        }
+                    }
+                    tbody {
+                        td {
+                            padding: 7px;
+                            font-size: .75rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media(max-width: 890px) {
+    .user {
+        .user-info-box {
+            .my-orders {
+                table {
+                    tbody {
+                        td {
+                            .full-id {
+                                display: none;
+                            }
+                            .cutted-id {
+                                display: inline-block;
+                            }
+                        }
+                    }
+                }
+                .arrows {
+                    span {
+                        font-size: 1.4rem;
+                        &.page {
+                            font-size: 1rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media(max-width: 800px) {
+    .user {
+        .user-sidebar {
+            width: 200px;
+            h4 {
+                font-size: 1.1rem;
+            }
+            ul li {
+                padding: 10px 5px;
+                font-size: .9rem;
+            }
+        }
+        .user-info-box {
+            width: calc(100vw - 200px);
+            .welcome-message h2 {
+                font-size: 1.3rem;
+            }
+        }
+    }
+}
+
+@media(max-width: 660px) {
+    .user {
+        .user-info-box {
+            width: calc(100vw - 200px);
+            .welcome-message h2 {
+                font-size: 1.1rem;
+            }
+            form {
+                width: 370px;
+            }
+            .user-details {
+                .buttons-for-other-changes {
+                    width: 370px;
+                }
+            }
+            .saving {
+                width: 370px;
+            }
+            .update-error {
+                width: 370px;
+            }
+        }
+    }
+}
+
+@media(max-width: 620px) {
+    .user {
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        .user-info-box {
+            width: 100%;
+            .my-orders {
+                padding: 0 20px;
+                padding-top: 10px;
+                margin-bottom: 30px;
+                table {
+                    thead th {
+                        padding: 7px;
+                        font-size: .9rem;
+                    }
+                    tbody td {
+                        padding: 7px;
+                        font-size: .8rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media(max-width: 500px) {
+    .user {
+        .user-info-box {
+            form {
+                .input-group {
+                    label {
+                        font-size: .95rem;
+                    }
+                    input {
+                        font-size: .85rem;
+                    }
+                }
+                button {
+                    font-size: .8rem;
+                }
+            }
+            .user-details {
+                .buttons-for-other-changes button {
+                    font-size: .9rem;
+                }
+            }
+            .saving p {
+                font-size: .9rem;
+            }
+            .update-error p {
+                font-size: .9rem;
+            }
+        }
+    }
+}
+
+@media(max-width: 470px) {
+    .user {
+        .user-info-box {
+            .my-orders {
+                table {
+                    thead th {
+                        padding: 5px;
+                        font-size: .8rem;
+                    }
+                    tbody td {
+                        padding: 5px;
+                        font-size: .7rem;
+                    }
+                }
+                .arrows {
+                    span {
+                        font-size: 1.2rem;
+                        &.page {
+                            font-size: .9rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media(max-width: 440px) {
+    .user {
+        min-height: 600px;
+    }
+}
+
+@media(max-width: 400px) {
+    .user {
+        .user-info-box {
+            .my-orders {
+                table {
+                    thead th {
+                        padding: 3px;
+                        font-size: .75rem;
+                    }
+                    tbody td {
+                        padding: 3px;
+                        font-size: .7rem;
+                    }
+                }
+            }
+            form {
+                width: 250px;
+                .input-group {
+                    label {
+                        font-size: .9rem;
+                    }
+                    input {
+                        font-size: .8rem;
+                    }
+                }
+                button {
+                    font-size: .7rem;
+                }
+            }
+            .user-details {
+                .buttons-for-other-changes {
+                    width: 250px;
+                    button {
+                        font-size: .8rem;
+                    }
+                }
+            }
+            .saving {
+                width: 250px;
+                p {
+                    font-size: .8rem;
+                }
+            }
+            .update-error {
+                width: 250px;
+                p {
+                    font-size: .8rem;
+                }
+            }
+        }
+    }
+}
+
+@media(max-width: 360px) {
+    .user {
+        .user-sidebar {
+            width: 200px;
+            h4 {
+                font-size: 1rem;
+            }
+            ul li {
+                padding: 10px 5px;
+                font-size: .8rem;
+            }
+        }
+        .user-info-box {
+            .my-orders {
+                table {
+                    thead th {
+                        padding: 3px;
+                        font-size: .65rem;
+                    }
+                    tbody td {
+                        padding: 3px;
+                        font-size: .6rem;
+                    }
+                }
+            }
+        }
+    }
+}

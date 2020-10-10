@@ -1,0 +1,183 @@
+@media(max-width: 750px) {
+    .order {
+        h2 {
+            font-size: 1.1rem;
+        }
+        .big-table {
+            .table {
+                .thead {
+                    span {
+                        font-size: .95rem;
+                    }
+                    span:first-child {
+                        width: 35%;
+                    }
+                    span:nth-child(2) {
+                        width: 20%;
+                    }
+                    span:nth-child(3) {
+                        width: 20%;
+                    }
+                    span:last-child {
+                        width: 25%;
+                    }
+                }
+                .tbody {
+                    .tr {
+                        div {
+                            span {
+                                font-size: .95rem;
+                            }
+                        }
+                        div:first-child {
+                            width: 35%;
+                        }
+                        div:nth-child(2) {
+                            width: 20%;
+                        }
+                        div:nth-child(3) {
+                            width: 20%;
+                        }
+                        div:last-child {
+                            width: 25%;
+                        }
+                    }
+                }
+            }
+        }
+        .small-tables {
+            .small-table {
+                h4 {
+                    font-size: 1rem;
+                }
+                .info-box {
+                    font-size: .85rem;
+                }
+            }
+        }
+    }
+}
+
+@media(max-width: 675px) {
+    .order {
+        .small-tables {
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            .small-table:first-child {
+                margin-bottom: 30px;
+            }
+        }
+    }
+}
+
+@media(max-width: 550px) {
+    .order {
+        h2 {
+            font-size: 1rem;
+        }
+        .big-table {
+            .table {
+                .thead {
+                    span {
+                        font-size: .8rem;
+                    }
+                }
+                .tbody {
+                    .tr {
+                        div {
+                            span {
+                                font-size: .8rem;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .small-tables {
+            .small-table {
+                h4 {
+                    font-size: .9rem;
+                }
+                .info-box {
+                    font-size: .75rem;
+                }
+            }
+        }
+    }
+}
+
+@media( max-width: 450px) {
+    .order {
+        .loading-order p {
+            font-size: .8rem;
+        }
+        h2 {
+            font-size: .9rem;
+        }
+        .big-table {
+            .table {
+                .thead {
+                    span {
+                        font-size: .75rem;
+                    }
+                }
+                .tbody {
+                    .tr {
+                        div {
+                            height: 60px;
+                            span {
+                                font-size: .7rem;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media(max-width: 370px) {
+    .order {
+        .big-table {
+            width: 85%;
+        }
+        .small-tables {
+            width: 85%;
+        }
+    }
+}
+
+@media(max-width: 320px) {
+    .order {
+        .big-table {
+            .table {
+                .thead {
+                    span {
+                        font-size: .7rem;
+                    }
+                }
+                .tbody {
+                    .tr {
+                        div {
+                            height: 55px;
+                            span {
+                                font-size: .65rem;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .small-tables {
+            .small-table {
+                h4 {
+                    font-size: .8rem;
+                }
+                .info-box {
+                    font-size: .7rem;
+                }
+            }
+        }
+    }
+}
