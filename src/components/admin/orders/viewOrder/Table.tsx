@@ -22,7 +22,7 @@ const Table = (props: { products: OrderProductInAdminArea[] }) => {
           <tr key={i}>
             <td>
               <img
-                src={require(`../../../../images/products/${product.image}`)}
+                src={product.image}
                 alt="Product"
               />
             </td>

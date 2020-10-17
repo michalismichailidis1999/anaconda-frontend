@@ -1,99 +1,99 @@
 .comments {
-    padding: 10px;
-    margin-bottom: 30px;
-    width: 90%;
-    h4 {
-        color: #010101;
-        font-weight: normal;
-        font-size: 1.5rem;
-        margin-bottom: 20px;
-        i {
-            margin-left: 5px;
-            color: #030303;
-        }
+  padding: 10px;
+  margin-bottom: 30px;
+  width: 90%;
+  h4 {
+    color: #010101;
+    font-weight: normal;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    i {
+      margin-left: 5px;
+      color: #030303;
     }
-    .leave-comment {
-        resize: none;
-        width: 100%;
-        height: 100px;
-        padding: 5px;
-        outline: none;
-        border: 1px solid #333;
-        font-size: 1.05rem;
+  }
+  .leave-comment {
+    resize: none;
+    width: 100%;
+    height: 100px;
+    padding: 5px;
+    outline: none;
+    border: 1px solid #333;
+    font-size: 1.05rem;
+    margin-bottom: 10px;
+  }
+  .buttons {
+    margin-bottom: 10px;
+    button {
+      padding: 5px 25px;
+      font-size: 1.05rem;
+    }
+    .done {
+      margin-right: 10px;
+      background: #761d1d;
+      color: white;
+      &:hover {
+        background: #a13535;
+      }
+    }
+    .cancel {
+      background: #f2f2f2;
+      color: #333;
+      &:hover {
+        background: #ccc;
+      }
+    }
+  }
+  .comments-list {
+    width: 80%;
+    font-family: "Roboto", sans-serif;
+    margin-top: 20px;
+    .comment {
+      width: fit-content;
+      max-width: 100%;
+      margin-bottom: 20px;
+      &:last-child {
+        margin-bottom: 0;
+      }
+      .user {
+        min-height: unset;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
         margin-bottom: 10px;
+        .name {
+          @include flexCenterRow();
+          margin-right: 10px;
+          span {
+            font-size: 1.3rem;
+            color: #010101;
+          }
+        }
+        .rate {
+          @include flexCenterRow();
+          i {
+            font-size: 0.9rem;
+          }
+        }
+      }
+      p {
+        padding: 10px;
+        background: #ddd;
+        color: #111;
+        border-radius: 8px;
+        position: relative;
+      }
+      .remove-comment {
+        position: absolute;
+        top: -40px;
+        right: -30px;
+        color: rgb(112, 24, 24);
+        cursor: pointer;
+      }
     }
-    .buttons {
-        margin-bottom: 10px;
-        button {
-            padding: 5px 25px;
-            font-size: 1.05rem;
-        }
-        .done {
-            margin-right: 10px;
-            background: #43d175;
-            color: white;
-            &:hover {
-                background: #43d175e1;
-            }
-        }
-        .cancel {
-            background: #f2f2f2;
-            color: #333;
-            &:hover {
-                background: #ccc;
-            }
-        }
+    .no-comments {
+      color: #111;
+      font-size: 1.4rem;
     }
-    .comments-list {
-        width: 80%;
-        font-family: "Roboto", sans-serif;
-        margin-top: 20px;
-        .comment {
-            width: fit-content;
-            max-width: 100%;
-            margin-bottom: 20px;
-            &:last-child {
-                margin-bottom: 0;
-            }
-            .user {
-                min-height: unset;
-                display: flex;
-                align-items: center;
-                justify-content: flex-start;
-                margin-bottom: 10px;
-                .name {
-                    @include flexCenterRow();
-                    margin-right: 10px;
-                    span {
-                        font-size: 1.3rem;
-                        color: #010101;
-                    }
-                }
-                .rate {
-                    @include flexCenterRow();
-                    i {
-                        font-size: .9rem;
-                    }
-                }
-            }
-            p {
-                padding: 10px;
-                background: #43d175;
-                color: white;
-                border-radius: 8px;
-                position: relative;
-            }
-            .remove-comment {
-                position: absolute;
-                top: -40px;
-                right: -30px;
-                color: rgb(112, 24, 24);
-                cursor: pointer;
-            }
-        }
-        .no-comments {
-            color: #111;
-            font-size: 1.4rem;
-        }
-    }
+  }
 }

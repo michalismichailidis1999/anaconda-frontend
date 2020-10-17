@@ -39,7 +39,7 @@ const Order = (props: {
                   <div className="tr" key={i}>
                     <div className="product-img-name">
                       <img
-                        src={require(`../../../../images/products/${p.image}`)}
+                        src={p.image}
                         alt="Product"
                       />
 

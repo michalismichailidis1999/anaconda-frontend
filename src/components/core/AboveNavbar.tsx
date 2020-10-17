@@ -5,7 +5,7 @@ const AboveNavbar = () => (
   <div className="above-nav">
     <div className="above-nav-section-1">
       <span>
-        <i className="fas fa-mobile-alt"></i> +30 6947031634
+        <i className="fas fa-mobile-alt"></i> +30 6978086475
       </span>
 
       <span>

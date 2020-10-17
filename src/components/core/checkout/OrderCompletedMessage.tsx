@@ -50,13 +50,13 @@ const OrderCompletedMessage = (props: {
       props.paymentMethod,
       props.paymentMethod === "card" ? 1 : 0,
       props.customerName,
-      props.extraPrice
+      Number(props.extraPrice.toFixed(2))
     );
 
     props.notifyBothAdminAndUserAboutTheOrder(
       props.orderId,
       props.orderPrice,
-      props.extraPrice,
+      Number(props.extraPrice.toFixed(2)),
       props.email,
       props.cart,
       userDetails,

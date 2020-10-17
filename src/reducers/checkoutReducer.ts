@@ -22,7 +22,8 @@ const initialState: CheckoutState = {
   extraPrice: 0,
   paymentMethod: "pay on delivery",
   orderCreated: false,
-  orderId: ""
+  orderId: "",
+  payOnDeliveryExtraPrice: 2
 };
 
 const checkoutReducer = (
@@ -53,7 +54,11 @@ const checkoutReducer = (
     case ADD_EXTRA_PRICE:
       return { ...state, extraPrice: payload.extraPrice };
     case SET_PAYMENT_METHOD:
-      return { ...state, paymentMethod: payload.paymentMethod };
+      let payOnDeliveryPrice = 0;
+      if(payload.paymentMethod === "pay on delivery"){
+        payOnDeliveryPrice = 2;
+      }
+      return { ...state, paymentMethod: payload.paymentMethod, payOnDeliveryExtraPrice: payOnDeliveryPrice };
     case CREATE_ORDER:
       return { ...state, orderCreated: true };
     case SET_ORDER_ID:

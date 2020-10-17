@@ -77,7 +77,7 @@ const Card = (props: {
                 style={
                   props.product.rate > 0 && props.product.rate >= rate
                     ? { color: "yellow" }
-                    : { color: "gray" }
+                    : { color: "#999" }
                 }
                 className="fas fa-star"
               ></i>

@@ -33,10 +33,11 @@ const Footer = (props: {
     { link: "Είσοδος", url: "/signin" },
     { link: "Οι παραγγελίες μου", url: "/user?my_orders" },
     { link: "Τα στοιχεία μου", url: "/user?user_details" },
+    {link: "Δες την παραγγελία σου", url: "/"}
   ]);
   const [adminContactDetails] = useState([
     { icon: "fas fa-phone", contact: "23810 83077" },
-    { icon: "fas fa-mobile-alt", contact: "+30 6947031634" },
+    { icon: "fas fa-mobile-alt", contact: "+30 6978086475" },
     { icon: "fas fa-at", contact: "anakonta2011@hotmail.com" },
   ]);
 

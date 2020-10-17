@@ -39,6 +39,8 @@ const Cart = (props: {
     if (props.cart.cart.length > 0) {
       props.getRecommendations(props.cart.cart[0].category_id);
     }
+
+    document.querySelector("footer")!.classList.remove("no-mt-footer");
   }, []);
 
   useEffect(() => {

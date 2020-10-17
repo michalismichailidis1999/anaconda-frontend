@@ -57,7 +57,7 @@ const Comments = (props: {
           >
             Τέλος
           </button>
-          <button className="cancel btn">Ακύρωση</button>
+          <button className="cancel btn" onClick={() => {setComment("")}}>Ακύρωση</button>
         </div>
       )}
 

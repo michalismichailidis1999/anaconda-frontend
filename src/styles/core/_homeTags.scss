@@ -1,175 +1,160 @@
 .home-tags {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-column-gap: 50px;
-    grid-row-gap: 50px;
-    width: 100%;
-    padding: 40px 30px;
-    background: url("../../images/Tags/tagsBg2.jpg") no-repeat center center/cover;
-    .home-tag {
-        position: relative;
-        padding: 20px;
-        border: 1px solid #333;
-        background: white;
-        z-index: 2;
-        .icon {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            color: lightgray;
-            @include flexCenterRow();
-            z-index: 1;
-            i {
-                font-size: 5rem;
-            }
-        }
-        h2 {
-            text-align: center;
-            position: relative;
-            font-family: "Roboto", sans-serif;
-            color: #333;
-            font-weight: normal;
-            margin-bottom: 25px;
-            z-index: 2;
-            font-size: 2.1rem;
-        }
-        p {
-            color: #444;
-            font-size: 1rem;
-            margin-bottom: 30px;
-            position: relative;
-            z-index: 2;
-            text-align: center;
-        }
-        button {
-            background: #333;
-            position: relative;
-            color: white;
-            padding: 5px 25px;
-            font-size: 1.1rem;
-            z-index: 2;
-            font-family: "Merriweather", sans-serif;
-            font-weight: normal;
-            i {
-                margin-left: 5px;
-            }
-            &:hover {
-                background: #333333e1;
-                i {
-                    margin-left: 10px;
-                }
-            }
-        }
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-column-gap: 50px;
+  grid-row-gap: 50px;
+  width: 100%;
+  padding: 40px 30px;
+  .home-tag {
+    position: relative;
+    padding: 20px;
+    border: 1px solid #333;
+    background: white;
+    z-index: 2;
+    .icon {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      color: lightgray;
+      @include flexCenterRow();
+      z-index: 1;
+      i {
+        font-size: 5rem;
+      }
     }
+    h2 {
+      text-align: center;
+      position: relative;
+      font-family: "Roboto", sans-serif;
+      color: #333;
+      font-weight: normal;
+      margin-bottom: 25px;
+      z-index: 2;
+      font-size: 2.1rem;
+    }
+    p {
+      color: #444;
+      font-size: 1rem;
+      margin-bottom: 30px;
+      position: relative;
+      z-index: 2;
+      text-align: center;
+    }
+    button {
+      background: #333;
+      position: relative;
+      color: white;
+      padding: 5px 25px;
+      font-size: 1.1rem;
+      z-index: 2;
+      font-family: "Merriweather", sans-serif;
+      font-weight: normal;
+      i {
+        margin-left: 5px;
+      }
+      &:hover {
+        background: #333333e1;
+        i {
+          margin-left: 10px;
+        }
+      }
+    }
+  }
 }
 
-@media(max-width: 950px) {
-    
-        .home-tags .home-tag {
-            h2 {
-                font-size: 1.8rem;
-            }
-            p {
-                font-size: .9rem;
-            }
-            button {
-                font-size: 1rem;
-            }
-        }
-    
+@media (max-width: 950px) {
+  .home-tags .home-tag {
+    h2 {
+      font-size: 1.8rem;
+    }
+    p {
+      font-size: 0.9rem;
+    }
+    button {
+      font-size: 1rem;
+    }
+  }
 }
 
-@media(max-width: 850px) {
-    
-        .home-tags .home-tag {
-            h2 {
-                font-size: 1.5rem;
-            }
-            p {
-                font-size: .85rem;
-            }
-            button {
-                font-size: .9rem;
-            }
-        }
-    
+@media (max-width: 850px) {
+  .home-tags .home-tag {
+    h2 {
+      font-size: 1.5rem;
+    }
+    p {
+      font-size: 0.85rem;
+    }
+    button {
+      font-size: 0.9rem;
+    }
+  }
 }
 
-@media(max-width: 780px) {
-    
-        .home-tags {
-            grid-template-columns: 1fr;
-            .home-tag {
-                h2 {
-                    font-size: 2rem;
-                }
-                p {
-                    font-size: 1rem;
-                }
-                button {
-                    font-size: 1rem;
-                }
-            }
-        }
-    
+@media (max-width: 780px) {
+  .home-tags {
+    grid-template-columns: 1fr;
+    .home-tag {
+      h2 {
+        font-size: 2rem;
+      }
+      p {
+        font-size: 1rem;
+      }
+      button {
+        font-size: 1rem;
+      }
+    }
+  }
 }
 
-@media(max-width: 650px) {
-    
-        .home-tags .home-tag {
-            h2 {
-                font-size: 1.8rem;
-            }
-            p {
-                font-size: .9rem;
-            }
-            button {
-                font-size: .9rem;
-            }
-        }
-    
+@media (max-width: 650px) {
+  .home-tags .home-tag {
+    h2 {
+      font-size: 1.8rem;
+    }
+    p {
+      font-size: 0.9rem;
+    }
+    button {
+      font-size: 0.9rem;
+    }
+  }
 }
 
-@media(max-width: 535px) {
-    
-        .home-tags .home-tag {
-            h2 {
-                font-size: 1.7rem;
-            }
-            p {
-                font-size: .8rem;
-            }
-            button {
-                font-size: .8rem;
-            }
-        }
-     
+@media (max-width: 535px) {
+  .home-tags .home-tag {
+    h2 {
+      font-size: 1.7rem;
+    }
+    p {
+      font-size: 0.8rem;
+    }
+    button {
+      font-size: 0.8rem;
+    }
+  }
 }
 
-@media(max-width: 435px) {
-    
-        .home-tags .home-tag {
-            h2 {
-                font-size: 1.5rem;
-            }
-        }
-    
+@media (max-width: 435px) {
+  .home-tags .home-tag {
+    h2 {
+      font-size: 1.5rem;
+    }
+  }
 }
 
-@media(max-width: 535px) {
-   
-        .home-tags .home-tag {
-            h2 {
-                font-size: 1.3rem;
-            }
-            p {
-                font-size: .7rem;
-            }
-            button {
-                font-size: .7rem;
-            }
-        }
-    
+@media (max-width: 535px) {
+  .home-tags .home-tag {
+    h2 {
+      font-size: 1.3rem;
+    }
+    p {
+      font-size: 0.7rem;
+    }
+    button {
+      font-size: 0.7rem;
+    }
+  }
 }

@@ -36,7 +36,10 @@ const Payment = (props: {
   customerName: string;
   setOrderId:Function;
   orderId:string;
+  paymentMethod: string;
+  payOnDeliveryExtraPrice: number;
 }) => {
+  // const [payOnDeliveryExtraPrice] = useState(2);
   const [choosedWay, setChoosedWay] = useState(1);
   const [cardElementOptions] = useState({
     hidePostalCode: true
@@ -188,12 +191,17 @@ const Payment = (props: {
 
         <div>
           <span className="price-from">+ Μεταφορικά</span>
-          <span className="price">{props.extraPrice}€</span>
+          <span className="price">{props.extraPrice.toFixed(2)}€</span>
         </div>
+
+        {props.paymentMethod === "pay on delivery" && <div>
+          <span className="price-from">+ Αντικαταβολή</span>
+          <span className="price">{props.payOnDeliveryExtraPrice}€</span>
+        </div>}
 
         <div>
           <span className="price-from">Σύνολο</span>
-          <span className="price">{props.orderPrice + props.extraPrice}€</span>
+          <span className="price">{props.orderPrice + Number(props.extraPrice.toFixed(2)) + props.payOnDeliveryExtraPrice}€</span>
         </div>
       </div>
 
@@ -281,7 +289,9 @@ const mapStateToProps = (state: State) => ({
   orderId: state.checkout.orderId,
   email: state.user.user.email,
   paymentEnd: state.checkout.paymentEnd,
-  paymentBegin: state.checkout.paymentBegin
+  paymentBegin: state.checkout.paymentBegin,
+  paymentMethod: state.checkout.paymentMethod,
+  payOnDeliveryExtraPrice: state.checkout.payOnDeliveryExtraPrice
 });
 
 export default connect(mapStateToProps, {

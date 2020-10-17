@@ -3,55 +3,22 @@ import React from "react";
 const Steps = (props: { currentStep: number }) => {
   return (
     <div className="steps">
-      <div className={props.currentStep > 1 ? "step finished" : "step current"}>
-        <div
-          className={
-            props.currentStep === 1
-              ? "step-transition-line unfinished"
-              : "step-transition-line finished"
-          }
-        ></div>
-
-        <span>
-          <i className="far fa-address-book"></i>
-        </span>
+      <div className="step">
+        <p>ΒΗΜΑ 1 <i className={props.currentStep > 1 ? "far fa-check-circle finished" : "far fa-times-circle unfinished"}></i></p>
+        <p>Τα στοιχεία σας</p>
       </div>
 
-      <div
-        className={
-          props.currentStep === 1
-            ? "step unfinished"
-            : props.currentStep === 2
-            ? "step current"
-            : "step finished"
-        }
-      >
-        <div
-          className={
-            props.currentStep <= 2
-              ? "step-transition-line unfinished"
-              : "step-transition-line finished"
-          }
-        ></div>
-
-        <span>
-          <i className="fas fa-truck"></i>
-        </span>
+      <div className="step">
+        <p>ΒΗΜΑ 2 <i className={props.currentStep > 2 ? "far fa-check-circle finished" : "far fa-times-circle unfinished"}></i></p>
+        <p>Τρόπος Παραλαβής</p>
       </div>
 
-      <div
-        className={
-          props.currentStep <= 2
-            ? "step unfinished"
-            : props.currentStep === 3
-            ? "step current"
-            : "step finished"
-        }
-      >
-        <span>
-          <i className="fas fa-money-bill-wave"></i>
-        </span>
+      <div className="step">
+        <p>ΒΗΜΑ 3 <i className={props.currentStep > 3 ? "far fa-check-circle finished" : "far fa-times-circle unfinished"}></i></p>
+        <p>Τρόπος Πληρωμής</p>
       </div>
+
+      
     </div>
   );
 };

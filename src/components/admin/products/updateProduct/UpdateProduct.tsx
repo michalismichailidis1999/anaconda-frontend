@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
-import { State, Category, Product } from "../../../../interfaces";
+import { State, Category, Product, ProductImage } from "../../../../interfaces";
 import {
   fetchProduct,
   updateProduct,
@@ -28,6 +28,7 @@ const CreateProduct = (props: {
   productUpdated: boolean;
   deleteProduct: Function;
   productDeleted: boolean;
+  productImages: ProductImage[]
 }) => {
   const history = useHistory();
 
@@ -42,6 +43,16 @@ const CreateProduct = (props: {
   const [on_sale, setOnSale] = useState(props.product.on_sale);
   const [new_price, setNewPrice] = useState(props.product.new_price);
   const [description, setDescription] = useState(props.product.description);
+
+  const [image, setImage] = useState("");
+  const [image2, setImage2] = useState("");
+  const [image3, setImage3] = useState("");
+  const [image4, setImage4] = useState("");
+
+  const [showDisplayerImages, setShowDisplayerImages] = useState(false);
+  const [showDisplayerImages2, setShowDisplayerImages2] = useState(false);
+  const [showDisplayerImages3, setShowDisplayerImages3] = useState(false);
+  const [showDisplayerImages4, setShowDisplayerImages4] = useState(false);
 
   useEffect(() => {
     let id = window.location.search.split("&")[2].split("=")[1];
@@ -86,9 +97,12 @@ const CreateProduct = (props: {
   }, [props.productDeleted]);
 
   const update = () => {
-    console.log('Product updated');
+    const formData = {
+      name, category_id, code, price, weight, quantity, description, image, image2, image3, image4, on_sale, new_price
+    };
 
-    // props.updateProduct(props.userId, props.token, productId, formData);
+
+    props.updateProduct(props.userId, props.token, productId, formData);
   };
 
   return (
@@ -235,14 +249,193 @@ const CreateProduct = (props: {
         />
       </div>
 
-      {/* {props.product.image4 !== "" && (
+      <div className="input-group">
+        <label>Φωτογραφία 1 <span className="required">*Υποχρεωτικό</span></label>
+
+        <div className="image-displayer" onClick={() => 
+          {
+            let temp = showDisplayerImages;
+            setShowDisplayerImages(!temp)
+
+            if(!temp){
+              setShowDisplayerImages2(false);
+              setShowDisplayerImages3(false);
+              setShowDisplayerImages4(false);
+            }
+          }
+        }>
+
+          <span className="select-arrow-down">
+            <i className="fas fa-caret-down"></i>
+          </span>
+
+          {image === "" && <div className="image-displayer-text">Επιλέξτε μια φωτογραφία</div>}
+          {image !== "" && <div className="image-displayer-option">
+          <img src={image} alt="Product"/>
+            </div>}
+          {showDisplayerImages && <div className="images-container">
+            {
+              props.productImages.map(product_image => 
+              <div className="image-displayer-option image-option" key={product_image.id} onClick={() => {
+                setImage(product_image.image_path);
+                setShowDisplayerImages(false);
+              }}>
+                <img src={product_image.image_path} alt="Product"/>
+              </div>)
+            }
+          </div>}
+        </div>
+      </div>
+
+      {props.product.image !== "" && (
+        <div className="choosed-img">
+          <img
+            src={props.product.image}
+            alt="Product"
+          />
+        </div>
+      )}
+
+      <div className="input-group">
+        <label>Φωτογραφία 2</label>
+
+        <div className="image-displayer" onClick={() => 
+          {
+            let temp = showDisplayerImages2;
+            setShowDisplayerImages2(!temp)
+
+            if(!temp){
+              setShowDisplayerImages(false);
+              setShowDisplayerImages3(false);
+              setShowDisplayerImages4(false);
+            }
+          }
+        }>
+
+          <span className="select-arrow-down">
+            <i className="fas fa-caret-down"></i>
+          </span>
+
+          {image2 === "" && <div className="image-displayer-text">Επιλέξτε μια φωτογραφία</div>}
+          {image2 !== "" && <div className="image-displayer-option">
+          <img src={image2} alt="Product"/>
+            </div>}
+          {showDisplayerImages2 && <div className="images-container">
+            {
+              props.productImages.map(product_image => 
+              <div className="image-displayer-option image-option" key={product_image.id} onClick={() => {
+                setImage2(product_image.image_path);
+                setShowDisplayerImages2(false);
+              }}>
+                <img src={product_image.image_path} alt="Product"/>
+              </div>)
+            }
+          </div>}
+        </div>
+      </div>
+
+      {props.product.image2 !== "" && (
+        <div className="choosed-img">
+          <img
+            src={props.product.image2}
+            alt="Product"
+          />
+        </div>
+      )}
+
+      <div className="input-group">
+        <label>Φωτογραφία 3</label>
+
+        <div className="image-displayer" onClick={() => 
+          {
+            let temp = showDisplayerImages3;
+            setShowDisplayerImages3(!temp)
+
+            if(!temp){
+              setShowDisplayerImages2(false);
+              setShowDisplayerImages(false);
+              setShowDisplayerImages4(false);
+            }
+          }
+        }>
+
+          <span className="select-arrow-down">
+            <i className="fas fa-caret-down"></i>
+          </span>
+
+          {image3 === "" && <div className="image-displayer-text">Επιλέξτε μια φωτογραφία</div>}
+          {image3 !== "" && <div className="image-displayer-option">
+          <img src={image3} alt="Product"/>
+            </div>}
+          {showDisplayerImages3 && <div className="images-container">
+            {
+              props.productImages.map(product_image => 
+              <div className="image-displayer-option image-option" key={product_image.id} onClick={() => {
+                setImage3(product_image.image_path);
+                setShowDisplayerImages3(false);
+              }}>
+                <img src={product_image.image_path} alt="Product"/>
+              </div>)
+            }
+          </div>}
+        </div>
+      </div>
+
+      {props.product.image3 !== "" && (
+        <div className="choosed-img">
+          <img
+            src={props.product.image3}
+            alt="Product"
+          />
+        </div>
+      )}
+
+      <div className="input-group">
+        <label>Φωτογραφία 4</label>
+
+        <div className="image-displayer" onClick={() => 
+          {
+            let temp = showDisplayerImages4;
+            setShowDisplayerImages4(!temp)
+
+            if(!temp){
+              setShowDisplayerImages2(false);
+              setShowDisplayerImages3(false);
+              setShowDisplayerImages(false);
+            }
+          }
+        }>
+
+          <span className="select-arrow-down">
+            <i className="fas fa-caret-down"></i>
+          </span>
+
+          {image4 === "" && <div className="image-displayer-text">Επιλέξτε μια φωτογραφία</div>}
+          {image4 !== "" && <div className="image-displayer-option">
+          <img src={image4} alt="Product"/>
+            </div>}
+          {showDisplayerImages4 && <div className="images-container">
+            {
+              props.productImages.map(product_image => 
+              <div className="image-displayer-option image-option" key={product_image.id} onClick={() => {
+                setImage4(product_image.image_path);
+                setShowDisplayerImages4(false);
+              }}>
+                <img src={product_image.image_path} alt="Product"/>
+              </div>)
+            }
+          </div>}
+        </div>
+      </div>
+
+      {props.product.image4 !== "" && (
         <div className="choosed-img">
           <img
             src={props.product.image4}
             alt="Product"
           />
         </div>
-      )} */}
+      )}
 
       <div className="buttons">
         <button className="btn create-btn" type="submit">
@@ -276,6 +469,7 @@ const mapStateToProps = (state: State) => ({
   product: state.admin.product.product,
   productUpdated: state.admin.product.productUpdated,
   productDeleted: state.admin.product.productDeleted,
+  productImages: state.admin.product.productImages
 });
 
 export default connect(mapStateToProps, {

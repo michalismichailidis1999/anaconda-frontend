@@ -1,3 +1,5 @@
+import {CartItem} from '../interfaces'
+
 export const validateEmail = (email: string) => {
   const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   return re.test(email.toLowerCase());
@@ -8,7 +10,32 @@ export const scrollOnTopOfThePage = () => {
 };
 
 export const getExtraPrice = () => {
-  return 6;
+  let cart = JSON.parse(localStorage.getItem("cart") + "");
+
+  let totalWeight = 0;
+  let total = 0;
+
+  cart.forEach((item: CartItem) => {
+    totalWeight += item.quantity * item.weight;
+  });
+
+  if(totalWeight <= 2){
+    return 2.4;
+  }else{
+    total += 2.4;
+    totalWeight -= 2;
+
+    while(totalWeight >= 1){
+      total += 0.8;
+      totalWeight -= 1;
+    }
+
+    if(totalWeight > 0){
+      total += 0.8;
+    }
+  }
+
+  return total;
 };
 
 export const shuffle = (arr: string[]) => {

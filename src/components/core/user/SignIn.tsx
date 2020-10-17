@@ -2,10 +2,11 @@ import React, { useState, useEffect } from "react";
 import SignInForm from "./form/SignInForm";
 import gsap, { TimelineLite, Power4 } from "gsap";
 import { validateEmail } from "../../../helpers";
-import { State, UserState } from "../../../interfaces";
+import { State } from "../../../interfaces";
 import { setError } from "../../../actions/formError";
 import { connect } from "react-redux";
 import { signin } from "../../../actions/user";
+import {useHistory} from 'react-router-dom';
 
 gsap.registerPlugin();
 
@@ -19,6 +20,8 @@ const SignIn = (props: {
   const [password, setPassword] = useState("");
   const [invalidInput, setInvalidInput] = useState("");
   const [formTl] = useState(new TimelineLite());
+
+  const history = useHistory();
 
   useEffect(() => {
     formTl.fromTo(
@@ -86,6 +89,12 @@ const SignIn = (props: {
         invalidInput={invalidInput}
         setInvalidInput={setInvalidInput}
       />
+
+      <div className="check-order-link">
+        <span onClick={() => {
+          // redirect
+        }}>Μπορείς να ελέγξεις την παραγγελία σου εδώ χωρίς να κάνεις εγγραφή ή σύνδεση.</span>
+      </div>
     </div>
   );
 };

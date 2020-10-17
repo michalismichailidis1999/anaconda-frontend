@@ -36,9 +36,24 @@ const CreateProduct = (props: {
   const [image3, setImage3] = useState("");
   const [image4, setImage4] = useState("");
 
+  const [showDisplayerImages, setShowDisplayerImages] = useState(false);
+  const [showDisplayerImages2, setShowDisplayerImages2] = useState(false);
+  const [showDisplayerImages3, setShowDisplayerImages3] = useState(false);
+  const [showDisplayerImages4, setShowDisplayerImages4] = useState(false);
+
+  const [showRequiredPopup, setShowRequiredPopup] = useState(false);
+
   const create = () => {
-    console.log("Product created")
-    // props.createProduct(props.userId, props.token, formData);
+    if(image === ""){
+      setShowRequiredPopup(true);
+      return;
+    }
+
+    const formData = {
+      name, category_id, code, price, weight, quantity, description, image, image2, image3, image4
+    };
+
+    props.createProduct(props.userId, props.token, formData);
   };
 
   useEffect(() => {
@@ -162,14 +177,164 @@ const CreateProduct = (props: {
       <div className="input-group">
         <label>Φωτογραφία 1 <span className="required">*Υποχρεωτικό</span></label>
 
-        <select required={true} onChange={e => setImage(e.target.value)}>
-          <option value="">Επιλέξτε μια φωτογραφία</option>
+        <div className="image-displayer" onClick={() => 
+          {
+            let temp = showDisplayerImages;
+            setShowDisplayerImages(!temp)
 
-          {/* TODO: Make a custom select to display the images */}
-        </select>
+            if(!temp){
+              setShowDisplayerImages2(false);
+              setShowDisplayerImages3(false);
+              setShowDisplayerImages4(false);
+            }
+          }
+        }>
+
+          <span className="select-arrow-down">
+            <i className="fas fa-caret-down"></i>
+          </span>
+
+          {image === "" && <div className="image-displayer-text">Επιλέξτε μια φωτογραφία</div>}
+          {image !== "" && <div className="image-displayer-option">
+          <img src={image} alt="Product"/>
+            </div>}
+          {showDisplayerImages && <div className="images-container">
+            {
+              props.productImages.map(product_image => 
+              <div className="image-displayer-option image-option" key={product_image.id} onClick={() => {
+                setImage(product_image.image_path);
+                setShowDisplayerImages(false);
+
+                if(showRequiredPopup){
+                  setShowRequiredPopup(false);
+                }
+              }}>
+                <img src={product_image.image_path} alt="Product"/>
+              </div>)
+            }
+          </div>}
+
+          {showRequiredPopup && <div className="image-required-popup">
+            <p><i className="fas fa-exclamation-circle"></i> Παρακαλώ επιλέξτε μια φωτογραφία από την λίστα</p>
+          </div>}
+        </div>
       </div>
 
-      <button className="btn create-btn" type="submit">
+      <div className="input-group">
+        <label>Φωτογραφία 2</label>
+
+        <div className="image-displayer" onClick={() => 
+          {
+            let temp = showDisplayerImages2;
+            setShowDisplayerImages2(!temp)
+
+            if(!temp){
+              setShowDisplayerImages(false);
+              setShowDisplayerImages3(false);
+              setShowDisplayerImages4(false);
+            }
+          }
+        }>
+
+          <span className="select-arrow-down">
+            <i className="fas fa-caret-down"></i>
+          </span>
+
+          {image2 === "" && <div className="image-displayer-text">Επιλέξτε μια φωτογραφία</div>}
+          {image2 !== "" && <div className="image-displayer-option">
+          <img src={image2} alt="Product"/>
+            </div>}
+          {showDisplayerImages2 && <div className="images-container">
+            {
+              props.productImages.map(product_image => 
+              <div className="image-displayer-option image-option" key={product_image.id} onClick={() => {
+                setImage2(product_image.image_path);
+                setShowDisplayerImages2(false);
+              }}>
+                <img src={product_image.image_path} alt="Product"/>
+              </div>)
+            }
+          </div>}
+        </div>
+      </div>
+
+      <div className="input-group">
+        <label>Φωτογραφία 3</label>
+
+        <div className="image-displayer" onClick={() => 
+          {
+            let temp = showDisplayerImages3;
+            setShowDisplayerImages3(!temp)
+
+            if(!temp){
+              setShowDisplayerImages2(false);
+              setShowDisplayerImages(false);
+              setShowDisplayerImages4(false);
+            }
+          }
+        }>
+
+          <span className="select-arrow-down">
+            <i className="fas fa-caret-down"></i>
+          </span>
+
+          {image3 === "" && <div className="image-displayer-text">Επιλέξτε μια φωτογραφία</div>}
+          {image3 !== "" && <div className="image-displayer-option">
+          <img src={image3} alt="Product"/>
+            </div>}
+          {showDisplayerImages3 && <div className="images-container">
+            {
+              props.productImages.map(product_image => 
+              <div className="image-displayer-option image-option" key={product_image.id} onClick={() => {
+                setImage3(product_image.image_path);
+                setShowDisplayerImages3(false);
+              }}>
+                <img src={product_image.image_path} alt="Product"/>
+              </div>)
+            }
+          </div>}
+        </div>
+      </div>
+
+      <div className="input-group">
+        <label>Φωτογραφία 4</label>
+
+        <div className="image-displayer" onClick={() => 
+          {
+            let temp = showDisplayerImages4;
+            setShowDisplayerImages4(!temp)
+
+            if(!temp){
+              setShowDisplayerImages2(false);
+              setShowDisplayerImages3(false);
+              setShowDisplayerImages(false);
+            }
+          }
+        }>
+
+          <span className="select-arrow-down">
+            <i className="fas fa-caret-down"></i>
+          </span>
+
+          {image4 === "" && <div className="image-displayer-text">Επιλέξτε μια φωτογραφία</div>}
+          {image4 !== "" && <div className="image-displayer-option">
+          <img src={image4} alt="Product"/>
+            </div>}
+          {showDisplayerImages4 && <div className="images-container">
+            {
+              props.productImages.map(product_image => 
+              <div className="image-displayer-option image-option" key={product_image.id} onClick={() => {
+                setImage4(product_image.image_path);
+                setShowDisplayerImages4(false);
+              }}>
+                <img src={product_image.image_path} alt="Product"/>
+              </div>)
+            }
+          </div>}
+        </div>
+      </div>
+
+      <button className="btn create-btn" type="submit" disabled={false}>
         Δημιουργία
       </button>
     </form>

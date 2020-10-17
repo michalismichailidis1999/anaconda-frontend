@@ -173,6 +173,7 @@ export interface CheckoutState {
   paymentMethod: string;
   orderCreated: boolean;
   orderId: string;
+  payOnDeliveryExtraPrice: number;
 }
 
 export interface OrderProduct {

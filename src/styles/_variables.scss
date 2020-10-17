@@ -1,24 +1,24 @@
 // Navbar
 $navbar-ff: "Oswald", sans-serif;
-$navbar-bg: #43d175;
-$sidenav-bg: #38a85f;
+$navbar-bg: #761d1d;
+$sidenav-bg: #993131;
 $navbar-color: white;
 $nav-links-color: white;
 $nav-links-color-hover: #e5e5e5;
 $logo-ff: "Josefin Sans", sans-serif;
-$sublist-bg: #49fc7c;
-$above-nav-bg: #25a151;
+$sublist-bg: #761d1d;
+$above-nav-bg: #993131;
 // --------------------------------------------------------
 // Products
 $card-ff: "Roboto", sans-serif;
 $card-body-padding: 15px;
-$card-body-bg: #f8f2f2;
+$card-body-bg: white;
 $card-body-h2-color: #221f1f;
 $card-body-p-color: #302c2c;
 $card-view-details-color: #5ec0ea;
-$card-button-bg: #55b66a;
-$card-button-bg-hover: #55b66ae1;
-$available-product-bg: #3fd360;
+$card-button-bg: #761d1d;
+$card-button-bg-hover: #993131;
+$available-product-bg: #4ee74b;
 $limited-product-bg: #d6ec51;
 $non-available-product-bg: #ea5248;
 //----------------------------------------------------------
@@ -26,28 +26,29 @@ $non-available-product-bg: #ea5248;
 $error: #e3786b;
 // -----------------------------------------------------------
 // Shop
-$page-color: #147536;
+$page-color: #761d1d;
 // -----------------------------------------------------------
 // Cart
 $cart-main-black: #1c1a1a;
-$cart-container-bg: linear-gradient(117.55deg, #4ee74b 0%, #277e25 100%);
+// $cart-container-bg: linear-gradient(117.55deg, #993131 0%, #761d1d 100%);
+$cart-container-bg: white;
 $quantity-btn-bg: #4ee74b;
-$quantity-btn-bg-hover: #4ee74be1;
+$quantity-btn-bg-hover: #76f773;
 $remove-cart-item-btn-bg: #e03838;
 $remove-cart-item-btn-bg-hover: #e03838e1;
 $cart-item-category-color: #863232;
 $cart-item-box-shadow: 1px 1px 8px 3px
   rgba(
     $color: #000000,
-    $alpha: 0.3,
+    $alpha: 0.1,
   );
 // -----------------------------------------------------------
 // Contact
 $contact-container-shadow-box: 1px 1px 9px 3px rgba(0, 0, 0, 0.13);
-$contact-details-bg: #52be48;
+$contact-details-bg: #993131;
 $contact-message-bg: #f8f2f2;
-$contact-message-btn-bg: #52be48;
-$contact-message-btn-bg-hover: #52be48e1;
+$contact-message-btn-bg: #993131;
+$contact-message-btn-bg-hover: #c43838;
 // --------------------------------------------------------------
 // Single Product
 $perfect-percent-line-bg: #156b14;

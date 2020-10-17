@@ -1,108 +1,105 @@
 .ways-to-choose {
-    margin-top: 20px;
+  margin-top: 20px;
+  margin-bottom: 30px;
+  @include flexCenterColumn();
+  .order-total-price {
     margin-bottom: 30px;
+    width: 300px;
     @include flexCenterColumn();
-    .order-total-price {
-        margin-bottom: 30px;
-        width: 300px;
-        @include flexCenterColumn();
-        padding: 15px;
-        div {
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 7px;
-            &:nth-child(2) {
-                padding-bottom: 5px;
-                border-bottom: 1px solid #333;
-            }
-            &:last-child {
-                margin-bottom: 0;
-            }
-            span {
-                display: inline-block;
-                font-size: 1.1rem;
-            }
+    padding: 15px;
+    div {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 7px;
+      &:last-child {
+        margin-bottom: 0;
+        padding-top: 5px;
+        border-top: 1px solid #333;
+      }
+      span {
+        display: inline-block;
+        font-size: 1.1rem;
+      }
+    }
+  }
+  h4 {
+    margin-bottom: 30px;
+    font-weight: normal;
+    font-size: 1.4rem;
+  }
+  .radio-cards {
+    width: 300px;
+    margin-bottom: 30px;
+    .radio-card {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: #333;
+      padding: 10px;
+      box-shadow: $radio-card-box-shadow;
+      margin-bottom: 25px;
+      &:last-child {
+        margin-bottom: 0;
+      }
+      .radio {
+        width: 25px;
+        height: 25px;
+        background: white;
+        border-radius: 50%;
+        border: 2px solid #333;
+        position: relative;
+        z-index: 2;
+        cursor: pointer;
+        @include flexCenterRow();
+        .checked {
+          position: absolute;
+          height: 15px;
+          width: 15px;
+          background: #333;
+          border-radius: 50%;
+          z-index: 1;
         }
+      }
+      .text {
+        text-align: center;
+      }
+      .icon {
+        font-size: 1.1rem;
+      }
     }
-    h4 {
-        margin-bottom: 30px;
-        font-weight: normal;
-        font-size: 1.4rem;
+  }
+  button {
+    padding: 5px 25px;
+    color: white;
+    background: #333;
+    font-size: 0.9rem;
+    &:hover {
+      background: #333333e1;
     }
-    .radio-cards {
-        width: 300px;
-        margin-bottom: 30px;
-        .radio-card {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            color: #333;
-            padding: 10px;
-            box-shadow: $radio-card-box-shadow;
-            margin-bottom: 25px;
-            &:last-child {
-                margin-bottom: 0;
-            }
-            .radio {
-                width: 25px;
-                height: 25px;
-                background: white;
-                border-radius: 50%;
-                border: 2px solid #333;
-                position: relative;
-                z-index: 2;
-                cursor: pointer;
-                @include flexCenterRow();
-                .checked {
-                    position: absolute;
-                    height: 15px;
-                    width: 15px;
-                    background: #333;
-                    border-radius: 50%;
-                    z-index: 1;
-                }
-            }
-            .text {
-                text-align: center;
-            }
-            .icon {
-                font-size: 1.1rem;
-            }
-        }
+    &.is-disabled {
+      background: #888;
+      cursor: not-allowed;
+      &:hover {
+        background: #888;
+      }
     }
-    button {
-        padding: 5px 25px;
-        color: white;
-        background: #333;
-        font-size: .9rem;
-        &:hover {
-            background: #333333e1;
-        }
-        &.is-disabled {
-            background: #888;
-            cursor: not-allowed;
-            &:hover {
-                background: #888;
-            }
-        }
+  }
+  .card-element-container {
+    margin: 0 auto;
+    padding: 10px;
+    border-radius: 8px;
+    width: 350px;
+    border: 1px solid #ccc;
+    margin-left: -25px;
+  }
+  .loading-message {
+    margin-top: 20px;
+    p {
+      padding: 10px 20px;
+      color: #111;
+      font-size: 1.05rem;
     }
-    .card-element-container {
-        margin: 0 auto;
-        padding: 10px;
-        border-radius: 8px;
-        width: 350px;
-        border: 1px solid #ccc;
-        margin-left: -25px;
-    }
-    .loading-message {
-        margin-top: 20px;
-        p {
-            padding: 10px 20px;
-            background: rgb(58, 196, 58);
-            color: white;
-            font-size: 1.05rem;
-        }
-    }
+  }
 }
