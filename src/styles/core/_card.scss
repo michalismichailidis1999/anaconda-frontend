@@ -1,404 +1,405 @@
 .card {
-    width: 100%;
-    box-shadow: 2px 3px 14px 1px rgba(20, 20, 20, 0.1);
-    position: relative;
-    .card-sale {
-        position: absolute;
-        width: 80px;
-        height: 80px;
-        top: -10px;
-        right: -10px;
-        font-family: "Roboto", sans-serif;
-        font-size: 1.8rem;
-        padding: 10px;
-        z-index: 4;
-        border-radius: 50%;
-        transform: rotateZ(-25deg);
-        background: #d82e22;
-        color: white;
-        @include flexCenterRow();
-        span {
-            width: fit-content;
-        }
+  width: 100%;
+  box-shadow: 2px 3px 14px 1px rgba(20, 20, 20, 0.1);
+  position: relative;
+  background: $card-body-bg;
+  .card-sale {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    top: -10px;
+    right: -10px;
+    font-family: "Roboto", sans-serif;
+    font-size: 1.8rem;
+    padding: 10px;
+    z-index: 4;
+    border-radius: 50%;
+    transform: rotateZ(-25deg);
+    background: #d82e22;
+    color: white;
+    @include flexCenterRow();
+    span {
+      width: fit-content;
     }
-    .card-head {
-        overflow: hidden;
-        img {
-            width: 100%;
+  }
+  .card-head {
+    overflow: hidden;
+    img {
+      width: 100%;
+    }
+  }
+  .card-body {
+    padding: $card-body-padding;
+    background: $card-body-bg;
+    font-family: $card-ff;
+    .availability {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      p {
+        font-size: 0.75rem;
+        width: fit-content;
+        padding: 4px;
+        border-radius: 5px;
+        color: white;
+      }
+      .available {
+        background: $available-product-bg;
+      }
+      .limited {
+        background: $limited-product-bg;
+      }
+      .non-available {
+        background: $non-available-product-bg;
+      }
+    }
+    h2 {
+      text-align: center;
+      color: #010101;
+      margin-bottom: 20px;
+      font-family: "Roboto", sans-serif;
+      font-weight: normal;
+    }
+    p {
+      text-align: left;
+      color: #020202;
+      margin-bottom: 10px;
+      font-size: 1.05rem;
+      label {
+        margin-right: 10px;
+      }
+      .price {
+        font-size: 1.1rem;
+      }
+      .old-price {
+        color: rgb(194, 183, 183);
+        text-decoration: line-through;
+        margin-right: 10px;
+        font-size: 0.95rem;
+      }
+    }
+    p.view-details {
+      font-size: 0.9rem;
+      .product-link {
+        color: $card-view-details-color;
+        text-decoration: none;
+      }
+    }
+    p.view-details:hover .product-link {
+      cursor: pointer;
+      text-decoration: underline;
+    }
+    button {
+      display: block;
+      text-align: center;
+      padding: 5px;
+      width: 100%;
+      background: $card-button-bg;
+      color: white;
+      margin-top: 20px;
+      i {
+        margin-left: 5px;
+      }
+      &:hover {
+        background: $card-button-bg-hover;
+      }
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  .products {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 985px) {
+  .card {
+    .card-body {
+      p {
+        label {
+          font-size: 1rem !important;
         }
+        span {
+          font-size: 0.9rem !important;
+        }
+        .price {
+          font-size: 1.05rem !important;
+        }
+        .old-price {
+          font-size: 0.85rem !important;
+        }
+      }
+      h2 {
+        font-size: 1.4rem;
+      }
+      .availability p {
+        font-size: 0.7rem !important;
+      }
+      p.view-details {
+        font-size: 0.75rem !important;
+      }
+      button {
+        font-size: 0.8rem !important;
+      }
+    }
+  }
+}
+
+@media (max-width: 925px) {
+  .card {
+    .card-sale {
+      width: 70px !important;
+      height: 70px !important;
+      top: -10px !important;
+      right: -10px !important;
+      font-size: 1.5rem !important;
     }
     .card-body {
-        padding: $card-body-padding;
-        background: $card-body-bg;
-        font-family: $card-ff;
-        .availability {
-            display: flex;
-            justify-content: flex-end;
-            align-items: center;
-            p {
-                font-size: .75rem;
-                width: fit-content;
-                padding: 4px;
-                border-radius: 5px;
-                color: white;
-            }
-            .available {
-                background: $available-product-bg;
-            }
-            .limited {
-                background: $limited-product-bg;
-            }
-            .non-available {
-                background: $non-available-product-bg;
-            }
+      p {
+        label {
+          font-size: 0.8rem !important;
+        }
+        span {
+          font-size: 0.7rem !important;
+        }
+        .price {
+          font-size: 0.9rem !important;
+        }
+        .old-price {
+          font-size: 0.75rem !important;
+        }
+      }
+      h2 {
+        font-size: 1.2rem;
+      }
+      .availability p {
+        font-size: 0.6rem !important;
+      }
+      p.view-details {
+        font-size: 0.7rem !important;
+      }
+      button {
+        font-size: 0.7rem !important;
+      }
+    }
+  }
+}
+
+@media (max-width: 785px) {
+  .products {
+    grid-template-columns: repeat(2, 1fr);
+    .card {
+      .card-body {
+        p {
+          label {
+            font-size: 1.05rem !important;
+          }
+          span {
+            font-size: initial !important;
+          }
+          .price {
+            font-size: initial !important;
+          }
+          .old-price {
+            font-size: 0.95rem !important;
+          }
         }
         h2 {
-            text-align: center;
-            color: #010101;
-            margin-bottom: 20px;
-            font-family: "Roboto", sans-serif;
-            font-weight: normal;
+          font-size: 1.7rem;
         }
-        p {
-            text-align: left;
-            color: #020202;
-            margin-bottom: 10px;
-            font-size: 1.05rem;
-            label {
-                margin-right: 10px;
-            }
-            .price {
-                font-size: 1.1rem;
-            }
-            .old-price {
-                color: rgb(194, 183, 183);
-                text-decoration: line-through;
-                margin-right: 10px;
-                font-size: .95rem;
-            }
+        .availability p {
+          font-size: 0.75rem !important;
         }
         p.view-details {
-            font-size: .9rem;
-            .product-link {
-                color: $card-view-details-color;
-                text-decoration: none;
-            }
-        }
-        p.view-details:hover .product-link {
-            cursor: pointer;
-            text-decoration: underline;
+          font-size: 0.85rem !important;
         }
         button {
-            display: block;
-            text-align: center;
-            padding: 5px;
-            width: 100%;
-            background: $card-button-bg;
-            color: white;
-            margin-top: 20px;
-            i {
-                margin-left: 5px;
-            }
-            &:hover {
-                background: $card-button-bg-hover;
-            }
+          font-size: 0.8rem !important;
         }
+      }
     }
+  }
 }
 
-@media(max-width: 1200px) {
-    .products {
-        grid-template-columns: repeat(3, 1fr);
+@media (max-width: 650px) {
+  .container {
+    .products-title {
+      h1 {
+        font-size: 1.6rem;
+      }
+      p {
+        font-size: 0.85rem;
+      }
     }
+  }
+  .products {
+    .card .card-body {
+      p {
+        label {
+          font-size: 0.9rem !important;
+        }
+        span {
+          font-size: 0.7rem !important;
+        }
+        .price {
+          font-size: 0.9rem !important;
+        }
+        .old-price {
+          font-size: 0.85rem !important;
+        }
+      }
+      h2 {
+        font-size: 1.4rem !important;
+      }
+      .availability p {
+        font-size: 0.65rem !important;
+      }
+      p.view-details {
+        font-size: 0.75rem !important;
+      }
+      button {
+        font-size: 0.75rem !important;
+      }
+    }
+  }
 }
 
-@media(max-width: 985px) {
+@media (max-width: 525px) {
+  .products {
+    .card .card-body {
+      p {
+        label {
+          font-size: 0.7rem !important;
+        }
+        span {
+          font-size: 0.65rem !important;
+        }
+        .price {
+          font-size: 0.75rem !important;
+        }
+        .old-price {
+          font-size: 0.65rem !important;
+        }
+      }
+      h2 {
+        font-size: 1.2rem !important;
+      }
+      .availability p {
+        font-size: 0.6rem !important;
+      }
+      p.view-details {
+        font-size: 0.68rem !important;
+      }
+      button {
+        font-size: 0.7rem !important;
+      }
+    }
+  }
+}
+
+@media (max-width: 485px) {
+  .container {
+    .products-title {
+      h1 {
+        font-size: 1.5rem;
+      }
+      p {
+        font-size: 0.79rem;
+      }
+    }
+  }
+  .products {
+    grid-template-columns: repeat(1, 1fr);
     .card {
-        .card-body {
-            p {
-                label {
-                    font-size: 1rem !important;
-                }
-                span {
-                    font-size: .9rem !important
-                }
-                .price {
-                    font-size: 1.05rem !important;
-                }
-                .old-price {
-                    font-size: .85rem !important;
-                }
-            }
-            h2 {
-                font-size: 1.4rem;
-            }
-            .availability p {
-                font-size: .7rem !important;
-            }
-            p.view-details {
-                font-size: .75rem !important;
-            }
-            button {
-                font-size: .8rem !important;
-            }
+      width: 70%;
+      margin: 0 auto;
+      .card-body {
+        p {
+          label {
+            font-size: 1rem !important;
+          }
+          span {
+            font-size: 0.85rem !important;
+          }
+          .price {
+            font-size: 1rem !important;
+          }
+          .old-price {
+            font-size: 0.85rem !important;
+          }
         }
+        h2 {
+          font-size: 1.4rem !important;
+        }
+        .availability p {
+          font-size: 0.7rem !important;
+        }
+        p.view-details {
+          font-size: 0.85rem !important;
+        }
+        button {
+          font-size: 0.85rem !important;
+        }
+      }
     }
+  }
 }
 
-@media(max-width: 925px) {
-    .card {
-        .card-sale {
-            width: 70px !important;
-            height: 70px !important;
-            top: -10px !important;
-            right: -10px !important;
-            font-size: 1.5rem !important;
+@media (max-width: 405px) {
+  .products .card {
+    .card-body {
+      p {
+        label {
+          font-size: 0.9rem !important;
         }
-        .card-body {
-            p {
-                label {
-                    font-size: .8rem !important;
-                }
-                span {
-                    font-size: .7rem !important;
-                }
-                .price {
-                    font-size: .9rem !important;
-                }
-                .old-price {
-                    font-size: .75rem !important;
-                }
-            }
-            h2 {
-                font-size: 1.2rem;
-            }
-            .availability p {
-                font-size: .6rem !important;
-            }
-            p.view-details {
-                font-size: .7rem !important;
-            }
-            button {
-                font-size: .7rem !important;
-            }
+        span {
+          font-size: 0.75rem !important;
         }
+        .price {
+          font-size: 0.9rem !important;
+        }
+        .old-price {
+          font-size: 0.75rem !important;
+        }
+      }
+      h2 {
+        font-size: 1.2rem !important;
+      }
+      .availability p {
+        font-size: 0.65rem !important;
+      }
+      p.view-details {
+        font-size: 0.75rem !important;
+      }
+      button {
+        font-size: 0.75rem !important;
+      }
     }
+  }
 }
 
-@media(max-width: 785px) {
-    .products {
-        grid-template-columns: repeat(2, 1fr);
-        .card {
-            .card-body {
-                p {
-                    label {
-                        font-size: 1.05rem !important;
-                    }
-                    span {
-                        font-size: initial !important;
-                    }
-                    .price {
-                        font-size: initial !important;
-                    }
-                    .old-price {
-                        font-size: .95rem !important;
-                    }
-                }
-                h2 {
-                    font-size: 1.7rem;
-                }
-                .availability p {
-                    font-size: .75rem !important;
-                }
-                p.view-details {
-                    font-size: .85rem !important;
-                }
-                button {
-                    font-size: .8rem !important;
-                }
-            }
-        }
-    }
+@media (max-width: 345px) {
+  .products .card {
+    width: 80%;
+  }
 }
 
-@media(max-width: 650px) {
-    .container {
-        .products-title {
-            h1 {
-                font-size: 1.6rem;
-            }
-            p {
-                font-size: .85rem;
-            }
-        }
+@media (max-width: 325px) {
+  .container {
+    .products-title {
+      h1 {
+        font-size: 1.3rem;
+      }
+      p {
+        font-size: 0.7rem;
+      }
     }
-    .products {
-        .card .card-body {
-            p {
-                label {
-                    font-size: .9rem !important;
-                }
-                span {
-                    font-size: .7rem !important;
-                }
-                .price {
-                    font-size: .9rem !important;
-                }
-                .old-price {
-                    font-size: .85rem !important;
-                }
-            }
-            h2 {
-                font-size: 1.4rem !important;
-            }
-            .availability p {
-                font-size: .65rem !important;
-            }
-            p.view-details {
-                font-size: .75rem !important;
-            }
-            button {
-                font-size: .75rem !important;
-            }
-        }
-    }
+  }
 }
 
-@media(max-width: 525px) {
-    .products {
-        .card .card-body {
-            p {
-                label {
-                    font-size: .7rem !important;
-                }
-                span {
-                    font-size: .65rem !important;
-                }
-                .price {
-                    font-size: .75rem !important;
-                }
-                .old-price {
-                    font-size: .65rem !important;
-                }
-            }
-            h2 {
-                font-size: 1.2rem !important;
-            }
-            .availability p {
-                font-size: .6rem !important;
-            }
-            p.view-details {
-                font-size: .68rem !important;
-            }
-            button {
-                font-size: .7rem !important;
-            }
-        }
-    }
-}
-
-@media(max-width:485px) {
-    .container {
-        .products-title {
-            h1 {
-                font-size: 1.5rem;
-            }
-            p {
-                font-size: .79rem;
-            }
-        }
-    }
-    .products {
-        grid-template-columns: repeat(1, 1fr);
-        .card {
-            width: 70%;
-            margin: 0 auto;
-            .card-body {
-                p {
-                    label {
-                        font-size: 1rem !important;
-                    }
-                    span {
-                        font-size: .85rem !important;
-                    }
-                    .price {
-                        font-size: 1rem !important;
-                    }
-                    .old-price {
-                        font-size: .85rem !important;
-                    }
-                }
-                h2 {
-                    font-size: 1.4rem !important;
-                }
-                .availability p {
-                    font-size: .7rem !important;
-                }
-                p.view-details {
-                    font-size: .85rem !important;
-                }
-                button {
-                    font-size: .85rem !important;
-                }
-            }
-        }
-    }
-}
-
-@media(max-width: 405px) {
-    .products .card {
-        .card-body {
-            p {
-                label {
-                    font-size: .9rem !important;
-                }
-                span {
-                    font-size: .75rem !important;
-                }
-                .price {
-                    font-size: .9rem !important;
-                }
-                .old-price {
-                    font-size: .75rem !important;
-                }
-            }
-            h2 {
-                font-size: 1.2rem !important;
-            }
-            .availability p {
-                font-size: .65rem !important;
-            }
-            p.view-details {
-                font-size: .75rem !important;
-            }
-            button {
-                font-size: .75rem !important;
-            }
-        }
-    }
-}
-
-@media(max-width: 345px) {
-    .products .card {
-        width: 80%;
-    }
-}
-
-@media(max-width: 325px) {
-    .container {
-        .products-title {
-            h1 {
-                font-size: 1.3rem;
-            }
-            p {
-                font-size: .7rem;
-            }
-        }
-    }
-}
-
-@media(max-width: 300px) {
-    .products .card {
-        width: 90%;
-    }
+@media (max-width: 300px) {
+  .products .card {
+    width: 90%;
+  }
 }

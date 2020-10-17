@@ -43,13 +43,6 @@ const CreateProduct = (props: {
   const [new_price, setNewPrice] = useState(props.product.new_price);
   const [description, setDescription] = useState(props.product.description);
 
-  const [image] = useState(new FormData());
-  const [image2] = useState(new FormData());
-  const [image3] = useState(new FormData());
-  const [image4] = useState(new FormData());
-
-  const [formData] = useState(new FormData());
-
   useEffect(() => {
     let id = window.location.search.split("&")[2].split("=")[1];
 
@@ -93,36 +86,9 @@ const CreateProduct = (props: {
   }, [props.productDeleted]);
 
   const update = () => {
-    formData.set("name", name);
-    formData.set("category_id", category_id);
-    formData.set("price", price + "");
-    formData.set("quantity", quantity + "");
-    formData.set("description", description);
-    formData.set("on_sale", on_sale + "");
-    formData.set("new_price", new_price + "");
-    formData.set("weight", weight + "");
+    console.log('Product updated');
 
-    if (code !== "") {
-      formData.set("code", code);
-    }
-
-    if (image.has("image")) {
-      props.uploadImage(props.userId, props.token, image);
-    }
-
-    if (image2.has("image")) {
-      props.uploadImage(props.userId, props.token, image2);
-    }
-
-    if (image3.has("image")) {
-      props.uploadImage(props.userId, props.token, image3);
-    }
-
-    if (image4.has("image")) {
-      props.uploadImage(props.userId, props.token, image4);
-    }
-
-    props.updateProduct(props.userId, props.token, productId, formData);
+    // props.updateProduct(props.userId, props.token, productId, formData);
   };
 
   return (
@@ -269,103 +235,14 @@ const CreateProduct = (props: {
         />
       </div>
 
-      <div className="input-group">
-        <label>
-          Φωτογραφία 1 <span className="required">*Υποχρεωτικό</span>
-        </label>
-        <input
-          type="file"
-          className="file-input"
-          accept="image/*"
-          onChange={(e) => {
-            if (e.target.files) {
-              formData.set("image", e.target.files[0]);
-              image.set("image", e.target.files[0]);
-            }
-          }}
-        />
-      </div>
-
-      {props.product.image !== "" && (
+      {/* {props.product.image4 !== "" && (
         <div className="choosed-img">
           <img
-            src={require(`../../../../images/products/${props.product.image}`)}
+            src={props.product.image4}
             alt="Product"
           />
         </div>
-      )}
-
-      <div className="input-group">
-        <label>Φωτογραφία 2</label>
-        <input
-          type="file"
-          className="file-input"
-          accept="image/*"
-          onChange={(e) => {
-            if (e.target.files) {
-              formData.set("image2", e.target.files[0]);
-              image2.set("image", e.target.files[0]);
-            }
-          }}
-        />
-      </div>
-
-      {props.product.image2 !== "" && (
-        <div className="choosed-img">
-          <img
-            src={require(`../../../../images/products/${props.product.image2}`)}
-            alt="Product"
-          />
-        </div>
-      )}
-
-      <div className="input-group">
-        <label>Φωτογραφία 3</label>
-        <input
-          type="file"
-          className="file-input"
-          accept="image/*"
-          onChange={(e) => {
-            if (e.target.files) {
-              formData.set("image3", e.target.files[0]);
-              image3.set("image", e.target.files[0]);
-            }
-          }}
-        />
-      </div>
-
-      {props.product.image3 !== "" && (
-        <div className="choosed-img">
-          <img
-            src={require(`../../../../images/products/${props.product.image3}`)}
-            alt="Product"
-          />
-        </div>
-      )}
-
-      <div className="input-group">
-        <label>Φωτογραφία 4</label>
-        <input
-          type="file"
-          className="file-input"
-          accept="image/*"
-          onChange={(e) => {
-            if (e.target.files) {
-              formData.set("image4", e.target.files[0]);
-              image4.set("image", e.target.files[0]);
-            }
-          }}
-        />
-      </div>
-
-      {props.product.image4 !== "" && (
-        <div className="choosed-img">
-          <img
-            src={require(`../../../../images/products/${props.product.image4}`)}
-            alt="Product"
-          />
-        </div>
-      )}
+      )} */}
 
       <div className="buttons">
         <button className="btn create-btn" type="submit">

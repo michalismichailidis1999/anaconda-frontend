@@ -10,6 +10,7 @@ import {
   Category,
   SignedUser,
   Message,
+  ProductImage
 } from "../../interfaces";
 import {
   VALIDATE_ADMIN_LOGIN,
@@ -57,6 +58,7 @@ import {
   PRODUCT_UPDATED,
   PRODUCT_CREATED,
   PRODUCT_DELETED,
+  GET_PRODUCT_IMAGES
 } from "../../actions/types/admin/product";
 import {
   GET_CATEGORIES_TOTAL_COUNT,
@@ -159,6 +161,7 @@ const initialState: AdminState = {
     productUpdated: false,
     productCreated: false,
     productDeleted: false,
+    productImages: []
   },
   category: {
     showCategories: true,
@@ -223,6 +226,7 @@ const adminReducer = (
       users: SignedUser[];
       messages: Message[];
       message: Message;
+      productImages: ProductImage[];
     };
   }
 ) => {
@@ -430,6 +434,10 @@ const adminReducer = (
     case PRODUCT_DELETED:
       newProductState = { ...state.product };
       newProductState.productDeleted = true;
+      return { ...state, product: newProductState };
+    case GET_PRODUCT_IMAGES:
+      newProductState = { ...state.product };
+      newProductState.productImages = payload.productImages;
       return { ...state, product: newProductState };
     case SET_SHOW_CATEGORIES:
       newCategoryState = { ...state.category };

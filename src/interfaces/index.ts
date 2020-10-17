@@ -383,6 +383,12 @@ export interface AdminProductState {
   productUpdated: boolean;
   productCreated: boolean;
   productDeleted: boolean;
+  productImages: ProductImage[]
+}
+
+export interface ProductImage{
+  id: number,
+  image_path: string;
 }
 
 export interface AdminProduct {

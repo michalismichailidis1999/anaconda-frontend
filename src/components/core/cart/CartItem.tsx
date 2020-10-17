@@ -22,7 +22,7 @@ const CartItem = (props: {
         <div className="item-img">
           <Link className="link-img" to={`/product/${props.cartItem.id}`}>
             <img
-              src={require(`../../../images/products/${props.cartItem.image}`)}
+              src={props.cartItem.image}
               alt="Product"
             />
           </Link>

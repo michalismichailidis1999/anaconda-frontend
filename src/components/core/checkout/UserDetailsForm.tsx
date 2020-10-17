@@ -59,8 +59,8 @@ const UserDetailsForm = (props: {
               showError && props.customerName === "" ? "with-error" : ""
             }
             type="text"
-            placeholder="Εισάγετε τον ονοματεπώνυμο σας..."
             value={props.customerName}
+            placeholder="Εισάγετε τον ονοματεπώνυμο σας..."
             onChange={e => {
               props.setCustomerName(e.target.value);
 

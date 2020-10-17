@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
 import { setIsOnAdminArea } from "../../../actions/app";
 import { State } from "../../../interfaces";
+import {getProductImages} from '../../../actions/admin/product'
 
 // Components
 import Navbar from "../Navbar";
@@ -15,6 +16,9 @@ import Messages from "../messages/Messages";
 const Dashboard = (props: {
   setIsOnAdminArea: Function;
   isOnAdminArea: boolean;
+  getProductImages:Function;
+  userId: string;
+  token:string;
 }) => {
   const [choosed, setChoosed] = useState("");
 
@@ -38,6 +42,8 @@ const Dashboard = (props: {
     if (!props.isOnAdminArea) {
       props.setIsOnAdminArea(true);
     }
+
+    props.getProductImages(props.userId, props.token);
   }, []);
 
   const handleNavbarChange = (choosed: string) => {
@@ -66,8 +72,11 @@ const Dashboard = (props: {
 
 const mapStateToProps = (state: State) => ({
   isOnAdminArea: state.app.isOnAdminArea,
+  userId: state.admin.user.id,
+  token: state.admin.user.token
 });
 
 export default connect(mapStateToProps, {
   setIsOnAdminArea,
+  getProductImages
 })(Dashboard);

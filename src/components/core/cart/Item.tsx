@@ -1,5 +1,4 @@
 import React from "react";
-import productImage from "../../../images/products/plate.png";
 
 const Item = (props: {
   cartItem: {
@@ -17,7 +16,7 @@ const Item = (props: {
       <div className="item-details">
         <div>
           <img
-            src={require(`../../../images/products/${props.cartItem.image}`)}
+            src={props.cartItem.image}
             alt="Product"
           />
         </div>

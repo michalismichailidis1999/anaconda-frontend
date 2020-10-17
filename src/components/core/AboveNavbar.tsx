@@ -9,7 +9,7 @@ const AboveNavbar = () => (
       </span>
 
       <span>
-        <i className="fas fa-at"></i> mixalismixailidis857@gmail.com
+        <i className="fas fa-at"></i> anakonta2011@hotmail.com
       </span>
     </div>
 

@@ -56,7 +56,7 @@ const Table = (props: {
                 <tr key={i}>
                   <td>
                     <img
-                      src={require(`../../../../images/products/${p.image}`)}
+                      src={p.image}
                       alt="Product"
                     />
                   </td>

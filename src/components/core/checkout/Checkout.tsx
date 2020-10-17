@@ -29,7 +29,7 @@ const Checkout = (props: {
   const [phone, setPhone] = useState(props.phone);
   const [zipcode, setZipcode] = useState(props.zipcode);
   const [customerName, setCustomerName] = useState(
-    props.firstName + " " + props.lastName
+    (props.firstName + " " + props.lastName).length > 2 ? props.firstName + " " + props.lastName : ""
   );
 
   useEffect(() => {

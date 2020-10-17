@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { State, Category } from "../../../../interfaces";
+import { State, Category, ProductImage } from "../../../../interfaces";
 import {
   uploadImage,
   setShowCreateProduct,
@@ -20,6 +20,7 @@ const CreateProduct = (props: {
   token: string;
   productCreated: boolean;
   categories: Category[];
+  productImages: ProductImage[]
 }) => {
   const history = useHistory();
 
@@ -30,41 +31,14 @@ const CreateProduct = (props: {
   const [weight, setWeight] = useState(0);
   const [quantity, setQuantity] = useState(0);
   const [description, setDescription] = useState("");
-
-  const [image] = useState(new FormData());
-  const [image2] = useState(new FormData());
-  const [image3] = useState(new FormData());
-  const [image4] = useState(new FormData());
-
-  const [formData] = useState(new FormData());
+  const [image, setImage] = useState("");
+  const [image2, setImage2] = useState("");
+  const [image3, setImage3] = useState("");
+  const [image4, setImage4] = useState("");
 
   const create = () => {
-    formData.set("name", name);
-    formData.set("category_id", category_id);
-    formData.set("price", price + "");
-    formData.set("quantity", quantity + "");
-    formData.set("description", description);
-    formData.set("weight", weight + "");
-
-    if (code !== "") {
-      formData.set("code", code);
-    }
-
-    props.uploadImage(props.userId, props.token, image);
-
-    if (image2.has("image")) {
-      props.uploadImage(props.userId, props.token, image2);
-    }
-
-    if (image3.has("image")) {
-      props.uploadImage(props.userId, props.token, image3);
-    }
-
-    if (image4.has("image")) {
-      props.uploadImage(props.userId, props.token, image4);
-    }
-
-    props.createProduct(props.userId, props.token, formData);
+    console.log("Product created")
+    // props.createProduct(props.userId, props.token, formData);
   };
 
   useEffect(() => {
@@ -186,66 +160,13 @@ const CreateProduct = (props: {
       </div>
 
       <div className="input-group">
-        <label>
-          Φωτογραφία 1 <span className="required">*Υποχρεωτικό</span>
-        </label>
-        <input
-          type="file"
-          className="file-input"
-          required={true}
-          accept="image/*"
-          onChange={(e) => {
-            if (e.target.files) {
-              formData.set("image", e.target.files[0]);
-              image.set("image", e.target.files[0]);
-            }
-          }}
-        />
-      </div>
+        <label>Φωτογραφία 1 <span className="required">*Υποχρεωτικό</span></label>
 
-      <div className="input-group">
-        <label>Φωτογραφία 2</label>
-        <input
-          type="file"
-          className="file-input"
-          accept="image/*"
-          onChange={(e) => {
-            if (e.target.files) {
-              formData.set("image2", e.target.files[0]);
-              image2.set("image", e.target.files[0]);
-            }
-          }}
-        />
-      </div>
+        <select required={true} onChange={e => setImage(e.target.value)}>
+          <option value="">Επιλέξτε μια φωτογραφία</option>
 
-      <div className="input-group">
-        <label>Φωτογραφία 3</label>
-        <input
-          type="file"
-          className="file-input"
-          accept="image/*"
-          onChange={(e) => {
-            if (e.target.files) {
-              formData.set("image3", e.target.files[0]);
-              image3.set("image", e.target.files[0]);
-            }
-          }}
-        />
-      </div>
-
-      <div className="input-group">
-        <label>Φωτογραφία 4</label>
-        <input
-          type="file"
-          className="file-input"
-          accept="image/*"
-          onChange={(e) => {
-            if (e.target.files) {
-              formData.set("image4", e.target.files[0]);
-              image4.set("image", e.target.files[0]);
-            }
-          }}
-        />
+          {/* TODO: Make a custom select to display the images */}
+        </select>
       </div>
 
       <button className="btn create-btn" type="submit">
@@ -260,6 +181,7 @@ const mapStateToProps = (state: State) => ({
   token: state.admin.user.token,
   productCreated: state.admin.product.productCreated,
   categories: state.product.categories,
+  productImages: state.admin.product.productImages
 });
 
 export default connect(mapStateToProps, {

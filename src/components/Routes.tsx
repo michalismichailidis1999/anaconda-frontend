@@ -43,11 +43,16 @@ const Routes = (props: {
       const { user, token } = JSON.parse(localStorage.getItem("user") + "");
 
       if (props.detailsId === -9999) {
-        console.log("Hey");
         props.getUserDetails(user.id, token);
       }
     }
   }, []);
+
+  useEffect(() => {
+    if(props.user.isAuthenticated && props.user.details.id === -9999){
+      props.getUserDetails(props.user.user.id, props.user.token);
+    }
+  }, [props.user])
 
   return (
     <Router>

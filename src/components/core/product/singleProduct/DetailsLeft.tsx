@@ -16,16 +16,16 @@ const DetailsLeft = (props: {
 
   const [images] = useState([
     imagesThatExists[0]
-      ? require(`../../../../images/products/${props.productImages[0]}`)
+      ? props.productImages[0]
       : null,
     imagesThatExists[1]
-      ? require(`../../../../images/products/${props.productImages[1]}`)
+      ? props.productImages[1]
       : null,
     imagesThatExists[2]
-      ? require(`../../../../images/products/${props.productImages[2]}`)
+      ? props.productImages[2]
       : null,
     imagesThatExists[3]
-      ? require(`../../../../images/products/${props.productImages[3]}`)
+      ? props.productImages[3]
       : null
   ]);
 
@@ -47,7 +47,7 @@ const DetailsLeft = (props: {
     <div className="details-left">
       <div className="img">
         <img
-          src={images[choosedImage]}
+          src={`${images[choosedImage]}`}
           alt={`Product View ${choosedImage}`}
           id="img"
         />
@@ -78,7 +78,7 @@ const DetailsLeft = (props: {
                 }
               }}
             >
-              <img src={image} alt="Product" />
+              <img src={`${image}`} alt="Product" />
             </div>
           ) : (
             ""

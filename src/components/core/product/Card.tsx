@@ -41,7 +41,7 @@ const Card = (props: {
           }}
         >
           <img
-            src={require(`../../../images/products/${props.product.image}`)}
+            src={props.product.image}
             alt={props.product.description}
           />
         </Link>
@@ -53,14 +53,14 @@ const Card = (props: {
             className={
               props.product.quantity > 25
                 ? "available"
-                : props.product.quantity < 25 && props.product.quantity > 0
+                : props.product.quantity <= 25 && props.product.quantity > 0
                 ? "limited"
                 : "non-available"
             }
           >
             {props.product.quantity > 25
               ? "Διαθέσιμο"
-              : props.product.quantity < 25 && props.product.quantity > 0
+              : props.product.quantity <= 25 && props.product.quantity > 0
               ? "Περιορισμένο"
               : "Μη Διαθέσιμο"}
           </p>

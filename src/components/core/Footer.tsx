@@ -37,15 +37,15 @@ const Footer = (props: {
   const [adminContactDetails] = useState([
     { icon: "fas fa-phone", contact: "23810 83077" },
     { icon: "fas fa-mobile-alt", contact: "+30 6947031634" },
-    { icon: "fas fa-at", contact: "mixalismixailidis857@gmail.com" },
+    { icon: "fas fa-at", contact: "anakonta2011@hotmail.com" },
   ]);
 
   const [workingHours] = useState([
-    "-Δευτέρα 9:00 - 2:00 και 17:00 - 21:00",
-    "-Τρίτη 9:00 - 2:00 και 17:00 - 21:00",
-    "-Τετάρτη 9:00 - 2:00 και 17:00 - 21:00",
-    "-Πέμπτη 9:00 - 2:00 και 17:00 - 21:00",
-    "-Παρασκευή 9:00 - 2:00 και 17:00 - 21:00",
+    "-Δευτέρα 9:00 - 2:30 και 17:00 - 21:00",
+    "-Τρίτη 9:00 - 2:30 και 17:00 - 21:00",
+    "-Τετάρτη 9:00 - 2:30 και 17:00 - 21:00",
+    "-Πέμπτη 9:00 - 2:30 και 17:00 - 21:00",
+    "-Παρασκευή 9:00 - 2:30 και 17:00 - 21:00",
   ]);
 
   return (
@@ -127,12 +127,12 @@ const Footer = (props: {
 
             <li>
               <a
-                href="https://facebook.com"
+                href="https://bit.ly/3lTXaed"
                 className="footer-link"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <i className="fab fa-facebook"></i> https://my_faceboom.com/1234
+                <i className="fab fa-facebook"></i> https://bit.ly/3lTXaed
               </a>
             </li>
           </ul>
@@ -190,7 +190,7 @@ const Footer = (props: {
           <ul>
             <li>
               <i className="fas fa-map-marker-alt"></i> Σκύδρα, Μεγάλου
-              Αλεξάνδρου 12
+              Αλεξάνδρου 48
             </li>
           </ul>
 

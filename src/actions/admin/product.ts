@@ -14,6 +14,7 @@ import {
   IMAGE_UPLOADED,
   PRODUCT_CREATED,
   PRODUCT_DELETED,
+  GET_PRODUCT_IMAGES
 } from "../types/admin/product";
 
 export const getProductsTotalCount = (userId: string, token: string) => async (
@@ -131,18 +132,21 @@ export const updateProduct = (
   userId: string,
   token: string,
   productId: string,
-  formData: FormData
+  formData: Object
 ) => async (dispatch: Dispatch) => {
   try {
     const config = {
       headers: {
         Authorization: `Bearer ${token}`,
+        'Content-Type': "application/json"
       },
     };
 
+    const body = JSON.stringify(formData)
+
     await axios.put(
       `${API}/admin/product/${userId}/${productId}/update?update=true`,
-      formData,
+      body,
       config
     );
 
@@ -157,16 +161,19 @@ export const updateProduct = (
 export const createProduct = (
   userId: string,
   token: string,
-  formData: FormData
+  formData: Object
 ) => async (dispatch: Dispatch) => {
   try {
     const config = {
       headers: {
         Authorization: `Bearer ${token}`,
+        'Content-Type': "application/json"
       },
     };
 
-    await axios.post(`${API}/admin/product/${userId}/create`, formData, config);
+    const body = JSON.stringify(formData)
+
+    await axios.post(`${API}/admin/product/${userId}/create`, body, config);
 
     dispatch({ type: PRODUCT_CREATED });
   } catch (err) {
@@ -197,3 +204,20 @@ export const deleteProduct = (
     );
   }
 };
+
+
+export const getProductImages = (userId: string, token:string) => async (dispatch:Dispatch) => {
+  try {
+    const config = {
+      headers: {
+        Authorization: `Bearer ${token}`
+      }
+    }
+
+    const res = await axios.get(`${API}/admin/product_images/${userId}`, config);
+
+    dispatch({type: GET_PRODUCT_IMAGES, payload: {productImages: res.data}});
+  } catch (err) {
+    alert("Κάτι πήγε στραβά. Δοκίμασε να ανανεώσεις την σελίδα.");
+  }
+}

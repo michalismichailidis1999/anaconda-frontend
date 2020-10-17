@@ -32,14 +32,14 @@ const DetailsRight = (props: {
           className={
             props.productQuantity > 25
               ? "available"
-              : props.productQuantity < 25 && props.productQuantity > 0
+              : props.productQuantity <= 25 && props.productQuantity > 0
               ? "limited"
               : "non-available"
           }
         >
           {props.productQuantity > 25
             ? "Διαθέσιμο"
-            : props.productQuantity < 25 && props.productQuantity > 0
+            : props.productQuantity <= 25 && props.productQuantity > 0
             ? "Περιορισμένο"
             : "Μη Διαθέσιμο"}
         </span>
