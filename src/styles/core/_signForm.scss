@@ -157,6 +157,11 @@
       }
     }
   }
+  .check-order-link {
+    span {
+      font-size: 0.85rem;
+    }
+  }
 }
 
 @media (max-width: 725px) {
@@ -198,6 +203,11 @@
 @media (max-width: 500px) {
   .sign-form {
     width: 80%;
+    .check-order-link {
+      span {
+        font-size: 0.75rem;
+      }
+    }
   }
 }
 

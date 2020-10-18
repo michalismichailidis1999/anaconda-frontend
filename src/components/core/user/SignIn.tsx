@@ -73,27 +73,31 @@ const SignIn = (props: {
 
   return (
     <div className="layout sign-form">
-      <div
-        className="form-error"
-        style={props.errorOccured ? {} : { display: "none" }}
-      >
-        <p>{props.errorMessage}</p>
-      </div>
+      <div className="centered-everything">
+        <div className="container-centered">
+            <div
+            className="form-error"
+            style={props.errorOccured ? {} : { display: "none" }}
+            >
+              <p>{props.errorMessage}</p>
+            </div>
 
-      <SignInForm
-        email={email}
-        password={password}
-        setEmail={setEmail}
-        setPassword={setPassword}
-        handleSubmit={handleSubmit}
-        invalidInput={invalidInput}
-        setInvalidInput={setInvalidInput}
-      />
+            <SignInForm
+              email={email}
+              password={password}
+              setEmail={setEmail}
+              setPassword={setPassword}
+              handleSubmit={handleSubmit}
+              invalidInput={invalidInput}
+              setInvalidInput={setInvalidInput}
+            />
 
-      <div className="check-order-link">
-        <span onClick={() => {
-          // redirect
-        }}>Μπορείς να ελέγξεις την παραγγελία σου εδώ χωρίς να κάνεις εγγραφή ή σύνδεση.</span>
+            <div className="check-order-link">
+              <span onClick={() => {
+                history.push("/check_my_order");
+              }}>Μπορείς να ελέγξεις την παραγγελία σου εδώ χωρίς να κάνεις εγγραφή ή σύνδεση.</span>
+            </div>
+          </div>
       </div>
     </div>
   );

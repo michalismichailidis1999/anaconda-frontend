@@ -65,6 +65,18 @@ body {
   padding-top: 90px;
 }
 
+.centered-everything {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 600px;
+}
+
+.container-centered {
+  width: 100%;
+}
+
 .btn {
   border: none;
   cursor: pointer;
@@ -134,6 +146,173 @@ body {
   .wait-message {
     p {
       font-size: 0.9rem !important;
+    }
+  }
+}
+
+.check-my-order {
+  .search-order {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    label {
+      margin-bottom: 10px;
+      font-size: 1.3rem;
+    }
+    .input-box {
+      width: 500px;
+      input {
+        width: 70%;
+        height: 35px;
+        padding: 5px;
+        outline: none;
+        border: 1px solid #333;
+        color: #111;
+      }
+      button {
+        display: inline-block;
+        width: 30%;
+        height: 35px;
+        border: none;
+        background: #ccc;
+        color: #111;
+        outline: none;
+        &:hover {
+          cursor: pointer;
+          background: #ddd;
+        }
+      }
+    }
+  }
+  .order-searched {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 10px;
+    p {
+      padding: 5px;
+      margin: 30px 0;
+      font-size: 1.2rem;
+      color: #111;
+    }
+    .order-searched-products {
+      width: 100%;
+      .table {
+        width: 80%;
+        box-shadow: 2px 2px 7px 4px rgba(0, 0, 0, 0.15);
+        border-collapse: collapse;
+        margin: 0 auto;
+        thead {
+          background: #993131;
+          color: white;
+          th {
+            padding: 10px;
+            text-align: center;
+          }
+        }
+        tbody {
+          td {
+            text-align: center;
+            padding: 5px;
+            font-size: 1.1rem;
+            color: #111;
+            img {
+              width: 70px;
+              justify-self: center;
+            }
+          }
+        }
+      }
+    }
+    .few-order-details {
+      width: 100%;
+      p {
+        width: 80%;
+        text-align: left;
+        margin: 0 auto;
+        margin-top: 20px;
+      }
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .check-my-order {
+    .search-order {
+      label {
+        font-size: 1rem;
+      }
+      .input-box {
+        width: 400px;
+      }
+    }
+    .order-searched {
+      p {
+        font-size: 0.95rem;
+      }
+      th {
+        font-size: 0.95rem !important;
+      }
+      td {
+        font-size: 0.95rem !important;
+        img {
+          width: 60px !important;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 650px) {
+  .check-my-order {
+    .search-order {
+      label {
+        font-size: 1rem;
+      }
+      .input-box {
+        width: 400px;
+      }
+    }
+    .order-searched {
+      p {
+        font-size: 0.85rem;
+      }
+      .table {
+        width: 90% !important;
+      }
+      th {
+        font-size: 0.85rem !important;
+      }
+      td {
+        font-size: 0.85rem !important;
+        img {
+          width: 50px !important;
+        }
+      }
+      .few-order-details p {
+        width: 90%;
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .check-my-order {
+    .search-order {
+      label {
+        font-size: 0.9rem;
+      }
+      .input-box {
+        width: 280px;
+      }
+    }
+    .order-searched {
+      table {
+        display: none !important;
+      }
     }
   }
 }

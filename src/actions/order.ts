@@ -5,6 +5,7 @@ import {
   FETCHING_ORDERS,
   GET_TOTAL_PAGES,
   GET_ORDER,
+  GETTING_ORDER
 } from "./types/order";
 import axios from "axios";
 import { Dispatch } from "redux";
@@ -128,6 +129,8 @@ export const getOrder = (
   orderId: string
 ) => async (dispatch: Dispatch) => {
   try {
+    dispatch({type: GETTING_ORDER});
+    
     const config = {
       headers: {
         Authorization: `Bearer ${token}`,

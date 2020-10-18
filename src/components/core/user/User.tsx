@@ -39,26 +39,30 @@ const User = (props: {
 
   return (
     <div className="layout user">
-      <UserSidebar choosed={choosed} setChoosed={setChoosed} />
+      <div className="centered-everything">
+        <div className="container-centered">
+          <UserSidebar choosed={choosed} setChoosed={setChoosed} />
 
-      <div className="user-info-box">
-        {choosed === 0 && (
-          <div className="welcome-message">
-            <h2>
-              Καλωσόρισες Μιχάλη! <br />
-              Χαιρόμαστε που σε έχουμε πάλι πίσω.
-              <span role="img" aria-label="face">
-                😄
-              </span>
-            </h2>
+          <div className="user-info-box">
+            {choosed === 0 && (
+              <div className="welcome-message">
+                <h2>
+                  Καλωσόρισες Μιχάλη! <br />
+                  Χαιρόμαστε που σε έχουμε πάλι πίσω.
+                  <span role="img" aria-label="face">
+                    😄
+                  </span>
+                </h2>
+              </div>
+            )}
+
+            {choosed === 1 && <MyOrders />}
+
+            {choosed === 2 && <MyDeliveryDetails />}
+
+            {choosed === 3 && <MyUserDetails />}
           </div>
-        )}
-
-        {choosed === 1 && <MyOrders />}
-
-        {choosed === 2 && <MyDeliveryDetails />}
-
-        {choosed === 3 && <MyUserDetails />}
+        </div>
       </div>
     </div>
   );

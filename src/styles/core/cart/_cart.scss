@@ -1,19 +1,18 @@
 .cart {
-    width: 90%;
-    margin: 0 auto;
-    min-height: 500px;
-    font-family: "Roboto", sans-serif;
-    .cart-container {
-        margin: 20px 0;
-        padding: 20px;
-        width: 100%;
-        @include flexCenterRow();
-        align-items: flex-start;
-        background: $cart-container-bg;
-        @import "./core/cart/cartLeft";
-        @import "./core/cart/cartRight";
-    }
-    @import "./core/cart/emptyCart";
+  width: 90%;
+  margin: 0 auto;
+  font-family: "Roboto", sans-serif;
+  .cart-container {
+    margin: 20px 0;
+    padding: 20px;
+    width: 100%;
+    @include flexCenterRow();
+    align-items: flex-start;
+    background: $cart-container-bg;
+    @import "./core/cart/cartLeft";
+    @import "./core/cart/cartRight";
+  }
+  @import "./core/cart/emptyCart";
 }
 
 @import "./cartMediaQueries";

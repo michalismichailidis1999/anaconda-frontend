@@ -1,8 +1,10 @@
 .user {
-    min-height: 500px;
+  .container-centered {
     display: flex;
-    @import "./userSidebar";
-    @import "./userInfoBox";
+    height: 420px;
+  }
+  @import "./userSidebar";
+  @import "./userInfoBox";
 }
 
 @import "./userMediaQueries";

@@ -1,14 +1,13 @@
 .checkout {
-    min-height: 500px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    @import "./steps";
-    @import "./formError";
-    @import "./userDetailsForm";
-    @import "./waysToChoose";
-    @import "./successMessage";
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  @import "./steps";
+  @import "./formError";
+  @import "./userDetailsForm";
+  @import "./waysToChoose";
+  @import "./successMessage";
 }
 
 @import "./checkoutMediaQueries";

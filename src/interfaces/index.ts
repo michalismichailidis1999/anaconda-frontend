@@ -36,6 +36,28 @@ export interface UserState {
   emailUpdated: boolean;
   passwordIsUpdating: boolean;
   passwordUpdated: boolean;
+  searchedOrder: SearchedOrder;
+  orderNotFound: boolean;
+}
+
+export interface SearchedOrder{
+  orderDetails: SearchedOrderDetails;
+  orderProducts: SearchedOrderProduct[];
+}
+
+export interface SearchedOrderDetails{
+  status: string;
+  total_price: number;
+  extra_price: number;
+  payment_method: string;
+}
+
+export interface SearchedOrderProduct{
+  image:string;
+  name:string;
+  price:number;
+  quantity: number;
+  category: string;
 }
 
 export interface FormResult {
@@ -187,6 +209,7 @@ export interface OrderPaymentDetails {
   id: string;
   status: string;
   total_price: number;
+  extra_price: number;
   payment_method: string;
   paid: number;
 }
@@ -216,6 +239,7 @@ export interface OrderState {
   ordersFetched: boolean;
   totalPages: number;
   orderFetched: boolean;
+  fetchingOrder: boolean;
 }
 
 // Admin interfaces

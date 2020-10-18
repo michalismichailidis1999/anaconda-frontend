@@ -24,6 +24,7 @@ import Contact from "./core/contact/Contact";
 import SingleProduct from "./core/product/singleProduct/SingleProduct";
 import Checkout from "./core/checkout/Checkout";
 import Order from "./core/user/myOrders/Order";
+import CheckMyOrder from './core/user/CheckMyOrder';
 import PageNotFound from "./404";
 
 // Admin components
@@ -115,6 +116,8 @@ const Routes = (props: {
         >
           <Dashboard />
         </AdminRoute>
+
+        <Route exact path="/check_my_order" component={CheckMyOrder} />
 
         <Route component={PageNotFound} />
       </Switch>

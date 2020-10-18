@@ -1,4 +1,4 @@
-import { UserState, FormResult, UserDetails } from "../interfaces";
+import { UserState, FormResult, UserDetails, SearchedOrder } from "../interfaces";
 import {
   SIGN_IN,
   SIGN_UP,
@@ -14,6 +14,9 @@ import {
   RESET_PASSWORD_UPDATE,
   PASSWORD_UPDATED,
   LOG_OUT,
+  ORDER_NOT_FOUND,
+  SEARCH_ORDER,
+  SEARCHING_FOR_MY_ORDER
 } from "../actions/types/user";
 
 const initialState: UserState = {
@@ -48,6 +51,16 @@ const initialState: UserState = {
   emailUpdated: false,
   passwordUpdated: false,
   passwordIsUpdating: false,
+  searchedOrder: {
+    orderDetails: {
+      status: "",
+      total_price: 0,
+      extra_price: 0,
+      payment_method: ""
+    },
+    orderProducts: []
+  },
+  orderNotFound: false
 };
 
 const userReducer = (
@@ -60,6 +73,7 @@ const userReducer = (
       firstName: string;
       lastName: string;
       email: string;
+      searchedOrder: SearchedOrder
     };
   }
 ) => {
@@ -158,6 +172,12 @@ const userReducer = (
         passwordIsUpdating: false,
         passwordUpdated: false,
       };
+    case SEARCH_ORDER:
+      return {...state, searchedOrder: payload.searchedOrder};
+      case SEARCHING_FOR_MY_ORDER:
+        return {...state, searchedOrder: initialState.searchedOrder, orderNotFound: false}
+    case ORDER_NOT_FOUND:
+      return {...state, orderNotFound: true};
     default:
       return state;
   }

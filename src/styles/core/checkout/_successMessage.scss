@@ -22,4 +22,48 @@
       font-size: 0.9rem;
     }
   }
+  .important-message {
+    margin: 40px auto;
+    padding: 20px;
+    color: white;
+    width: 50%;
+    background: #993131;
+    p {
+      width: 100%;
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .success-message {
+    p {
+      font-size: 1.1rem;
+    }
+    .important-message {
+      width: 400px;
+    }
+  }
+}
+
+@media (max-width: 550px) {
+  .success-message {
+    p {
+      font-size: 0.9rem;
+    }
+    .important-message {
+      width: 300px;
+    }
+  }
+}
+
+@media (max-width: 380px) {
+  .success-message {
+    p {
+      font-size: 0.75rem;
+    }
+    .important-message {
+      padding: 10px;
+      width: 250px;
+    }
+  }
 }

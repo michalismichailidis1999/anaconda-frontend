@@ -42,48 +42,52 @@ const Checkout = (props: {
 
   return (
     <div className="layout checkout">
-      <Steps currentStep={props.currentStep} />
+      <div className="centered-everything">
+        <div className="container-centered">
+          <Steps currentStep={props.currentStep} />
 
-      {props.currentStep === 1 && (
-        <UserDetailsForm
-          county={county}
-          city={city}
-          address={address}
-          phone={phone}
-          zipcode={zipcode}
-          customerName={customerName}
-          setCounty={setCounty}
-          setCity={setCity}
-          setAddress={setAddress}
-          setPhone={setPhone}
-          setZipcode={setZipcode}
-          setCustomerName={setCustomerName}
-        />
-      )}
+          {props.currentStep === 1 && (
+            <UserDetailsForm
+              county={county}
+              city={city}
+              address={address}
+              phone={phone}
+              zipcode={zipcode}
+              customerName={customerName}
+              setCounty={setCounty}
+              setCity={setCity}
+              setAddress={setAddress}
+              setPhone={setPhone}
+              setZipcode={setZipcode}
+              setCustomerName={setCustomerName}
+            />
+          )}
 
-      {props.currentStep === 2 && <Delivery />}
+          {props.currentStep === 2 && <Delivery />}
 
-      {props.currentStep === 3 && (
-        <Payment
-          county={county}
-          city={city}
-          address={address}
-          phone={phone}
-          zipcode={zipcode}
-          customerName={customerName}
-        />
-      )}
+          {props.currentStep === 3 && (
+            <Payment
+              county={county}
+              city={city}
+              address={address}
+              phone={phone}
+              zipcode={zipcode}
+              customerName={customerName}
+            />
+          )}
 
-      {props.currentStep === 4 && props.orderDone && (
-        <OrderCompletedMessage
-          county={county}
-          city={city}
-          address={address}
-          phone={phone}
-          zipcode={zipcode}
-          customerName={customerName}
-        />
-      )}
+          {props.currentStep === 4 && props.orderDone && (
+            <OrderCompletedMessage
+              county={county}
+              city={city}
+              address={address}
+              phone={phone}
+              zipcode={zipcode}
+              customerName={customerName}
+            />
+          )}
+        </div>
+      </div>
     </div>
   );
 };

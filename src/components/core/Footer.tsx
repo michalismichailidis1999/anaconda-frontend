@@ -33,7 +33,7 @@ const Footer = (props: {
     { link: "Είσοδος", url: "/signin" },
     { link: "Οι παραγγελίες μου", url: "/user?my_orders" },
     { link: "Τα στοιχεία μου", url: "/user?user_details" },
-    {link: "Δες την παραγγελία σου", url: "/"}
+    {link: "Παρακολούθηση Παραγγελίας", url: "/check_my_order"}
   ]);
   const [adminContactDetails] = useState([
     { icon: "fas fa-phone", contact: "23810 83077" },
@@ -136,6 +136,17 @@ const Footer = (props: {
                 <i className="fab fa-facebook"></i> https://bit.ly/3lTXaed
               </a>
             </li>
+            <li>
+              <a 
+                  href="https://bit.ly/2HjDfGv" 
+                  className="footer-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+              >
+                  <i className="fab fa-instagram"></i>{" "}
+                  https://bit.ly/2HjDfGv
+              </a>
+            </li>
           </ul>
         </div>
 
@@ -170,13 +181,24 @@ const Footer = (props: {
 
               <li>
                 <a
-                  href="https://facebook.com"
+                  href="https://bit.ly/3lTXaed"
                   className="footer-link"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
                   <i className="fab fa-facebook"></i>{" "}
-                  https://my_faceboom.com/1234
+                  https://bit.ly/3lTXaed
+                </a>
+              </li>
+              <li>
+                <a 
+                  href="https://bit.ly/2HjDfGv" 
+                  className="footer-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <i className="fab fa-instagram"></i>{" "}
+                  https://bit.ly/2HjDfGv
                 </a>
               </li>
             </ul>

@@ -15,6 +15,9 @@ import {
   PASSWORD_UPDATED,
   PASSOWORD_IS_UPDATING,
   LOG_OUT,
+  SEARCH_ORDER,
+  ORDER_NOT_FOUND,
+  SEARCHING_FOR_MY_ORDER
 } from "./types/user";
 import { CAN_CLICK_BUTTON, CANNOT_CLICK_BUTTON } from "./types/formButton";
 import { SET_ERROR } from "./types/formError";
@@ -246,3 +249,28 @@ export const resetPasswordUpdate = () => (dispatch: Dispatch) => {
 export const logOut = () => (dispatch: Dispatch) => {
   dispatch({ type: LOG_OUT });
 };
+
+
+export const searchOrder = (id:string) => async (dispatch: Dispatch) => {
+  try {
+    dispatch({type: SEARCHING_FOR_MY_ORDER});
+    
+    const config = {
+      headers: {
+        'Content-Type': "application/json"
+      }
+    }
+
+    const body = JSON.stringify({id});
+
+    const res = await axios.post(`${API}/check_my_order`, body, config);
+
+    if(!res.data){
+      dispatch({type:ORDER_NOT_FOUND});
+    }else{
+      dispatch({type:SEARCH_ORDER, payload: {searchedOrder: res.data}});
+    }
+  } catch (err) {
+    alert("Κάτι πήγε στραβά. Δοκίμασε να ανανεώσεις την σελίδα και δοκίμασε ξανά.");
+  }
+}

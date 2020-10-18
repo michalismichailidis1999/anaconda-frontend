@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import { connect } from "react-redux";
 import {
   State,
@@ -6,13 +6,25 @@ import {
   OrderDeliveryDetails,
   OrderPaymentDetails
 } from "../../../../interfaces";
+import {getOrder} from '../../../../actions/order'
 
 const Order = (props: {
   orderFetched: boolean;
   orderProducts: OrderProduct[];
   orderDeliveryDetails: OrderDeliveryDetails;
   orderPaymentDetails: OrderPaymentDetails;
+  fetchingOrder: boolean;
+  getOrder:Function;
+  userId:string;
+  token:string;
 }) => {
+  useEffect(() => {
+    if(!props.fetchingOrder && !props.orderFetched){
+      let id = window.location.pathname.split("/")[2];
+      
+      props.getOrder(props.userId, props.token, id);
+    }
+  }, [])
   return (
     <div className="layout order">
       {!props.orderFetched && (
@@ -101,13 +113,18 @@ const Order = (props: {
 
               <div className="info-box">
                 <span>Ποσό Παραγγελίας:</span>
-                <span>{props.orderPaymentDetails.total_price - 6}$</span>
+                <span>{props.orderPaymentDetails.payment_method !== "card" ? props.orderPaymentDetails.total_price - 2 : props.orderPaymentDetails.total_price}€</span>
               </div>
 
               <div className="info-box">
                 <span>Μεταφορικά:</span>
-                <span>6$</span>
+                <span>{props.orderPaymentDetails.extra_price}€</span>
               </div>
+
+              {props.orderPaymentDetails.payment_method !== "card" && <div className="info-box">
+                <span>Αντικαταβολή:</span>
+                <span>2€</span>
+              </div>}
 
               <div className="info-box">
                 <span>Τρόπος Πληρωμής:</span>
@@ -136,7 +153,10 @@ const mapStateToProps = (state: State) => ({
   orderProducts: state.order.orderProducts,
   orderDeliveryDetails: state.order.orderDeliveryDetails,
   orderPaymentDetails: state.order.orderPaymentDetails,
-  orderFetched: state.order.orderFetched
+  orderFetched: state.order.orderFetched,
+  fetchingOrder: state.order.fetchingOrder,
+  userId: state.user.user.id,
+  token: state.user.token
 });
 
-export default connect(mapStateToProps, {})(Order);
+export default connect(mapStateToProps, {getOrder})(Order);

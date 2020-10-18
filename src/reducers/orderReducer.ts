@@ -10,6 +10,7 @@ import {
   FETCHING_ORDERS,
   GET_TOTAL_PAGES,
   GET_ORDER,
+  GETTING_ORDER
 } from "../actions/types/order";
 import { LOG_OUT } from "../actions/types/user";
 
@@ -30,11 +31,13 @@ const initialState: OrderState = {
     total_price: 0,
     payment_method: "",
     paid: -9999,
+    extra_price: 0
   },
   fetchingOrders: false,
   ordersFetched: false,
   totalPages: 0,
   orderFetched: false,
+  fetchingOrder: false
 };
 
 const orderReducer = (
@@ -75,7 +78,10 @@ const orderReducer = (
         orderDeliveryDetails: payload.deliveryDetails,
         orderPaymentDetails: payload.paymentDetails,
         orderFetched: true,
+        fetchingOrder: false
       };
+    case GETTING_ORDER:
+      return {...state, fetchingOrder: true};
     default:
       return state;
   }

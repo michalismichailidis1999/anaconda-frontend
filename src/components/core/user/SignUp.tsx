@@ -103,28 +103,32 @@ const SignUp = (props: {
 
   return (
     <div className="layout sign-form">
-      <div
-        className="form-error"
-        style={props.errorOccured ? {} : { display: "none" }}
-      >
-        <p>{props.errorMessage}</p>
-      </div>
+      <div className="centered-everything">
+        <div className="container-centered">
+          <div
+          className="form-error"
+          style={props.errorOccured ? {} : { display: "none" }}
+          >
+            <p>{props.errorMessage}</p>
+          </div>
 
-      <SignUpForm
-        firstName={firstName}
-        lastName={lastName}
-        email={email}
-        password={password}
-        confirmPassword={confirmPassword}
-        setFirstName={setFirstName}
-        setLastName={setLastName}
-        setEmail={setEmail}
-        setPassword={setPassword}
-        setConfirmPassword={setConfirmPassword}
-        handleSubmit={handleSubmit}
-        invalidInput={invalidInput}
-        setInvalidInput={setInvalidInput}
-      />
+          <SignUpForm
+            firstName={firstName}
+            lastName={lastName}
+            email={email}
+            password={password}
+            confirmPassword={confirmPassword}
+            setFirstName={setFirstName}
+            setLastName={setLastName}
+            setEmail={setEmail}
+            setPassword={setPassword}
+            setConfirmPassword={setConfirmPassword}
+            handleSubmit={handleSubmit}
+            invalidInput={invalidInput}
+            setInvalidInput={setInvalidInput}
+          />
+        </div>
+      </div>
     </div>
   );
 };

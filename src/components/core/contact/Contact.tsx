@@ -17,15 +17,19 @@ const Contact = (props: { message: MessageState }) => {
 
   return (
     <div className="layout contact">
-      <h1>Επικοινωνίστε μαζί μας</h1>
+      <div className="centered-everything">
+        <div className="container-centered">
+          <h1>Επικοινωνίστε μαζί μας</h1>
 
-      <div className="contact-container">
-        <ContectDetails />
+          <div className="contact-container">
+            <ContectDetails />
 
-        <ContactMessage />
+            <ContactMessage />
+          </div>
+
+          {props.message.showPopup && <Popup />}
+        </div>
       </div>
-
-      {props.message.showPopup && <Popup />}
     </div>
   );
 };

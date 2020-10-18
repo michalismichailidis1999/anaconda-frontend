@@ -33,6 +33,8 @@ const OrderCompletedMessage = (props: {
   orderId: string;
 }) => {
   const createOrder = () => {
+    const payOnDeliveryExtraPrice = props.paymentMethod !== "card" ? 2 : 0;
+
     const userDetails = {
       county: props.county,
       city: props.city,
@@ -43,7 +45,7 @@ const OrderCompletedMessage = (props: {
 
     props.createOrder(
       props.orderId,
-      props.orderPrice,
+      props.orderPrice + payOnDeliveryExtraPrice,
       props.email,
       props.cart,
       userDetails,
@@ -55,7 +57,7 @@ const OrderCompletedMessage = (props: {
 
     props.notifyBothAdminAndUserAboutTheOrder(
       props.orderId,
-      props.orderPrice,
+      props.orderPrice + payOnDeliveryExtraPrice,
       Number(props.extraPrice.toFixed(2)),
       props.email,
       props.cart,
@@ -89,6 +91,11 @@ const OrderCompletedMessage = (props: {
               😄
             </span>
           </p>
+
+        <div className="important-message">
+          <p>Ο κωδικός της παραγγελίας σας είναι #{props.orderId}</p>
+          <p>Παρακαλώ σημειώστε τον ώστε να μπορείτε να ελέγξετε την παραγγελία σας αν δεν έχετε κάνει εγγραφή στην ιστοσελίδα μας.</p>
+        </div>
 
           <button>
             <Link to="/" onClick={() => props.resetCheckout()}>

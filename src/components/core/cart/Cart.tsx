@@ -49,47 +49,51 @@ const Cart = (props: {
 
   return (
     <div className="layout cart">
-      {props.cart.loading ||
-        (loading && (
-          <div className="container">
-            <div className="loading-cart">
-              <p>Φόρτωση...</p>
+      <div className="centered-everything">
+        <div className="container-centered">
+          {props.cart.loading ||
+          (loading && (
+            <div className="container">
+              <div className="loading-cart">
+                <p>Φόρτωση...</p>
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
 
-      {!props.cart.loading && !loading && cartItems.length > 0 && (
-        <React.Fragment>
-          <div className="cart-container">
-            <CartLeft
-              cartItems={cartItems}
-              totalPrice={props.cart.totalPrice}
-              totalProducts={props.cart.totalItems}
-            />
+          {!props.cart.loading && !loading && cartItems.length > 0 && (
+            <React.Fragment>
+              <div className="cart-container">
+                <CartLeft
+                  cartItems={cartItems}
+                  totalPrice={props.cart.totalPrice}
+                  totalProducts={props.cart.totalItems}
+                />
 
-            <CartRight
-              totalPrice={props.cart.totalPrice}
-              cartItems={cartItems}
-            />
-          </div>
+                <CartRight
+                  totalPrice={props.cart.totalPrice}
+                  cartItems={cartItems}
+                />
+              </div>
 
-          <div className="container">
-            <ProductsGrid
-              products={props.recommendations}
-              title={grid.title}
-              titleIcon={grid.titleIcon}
-              paragraph={grid.paragraph}
-              history={props.history}
-            />
-          </div>
-        </React.Fragment>
-      )}
+              <div className="container">
+                <ProductsGrid
+                  products={props.recommendations}
+                  title={grid.title}
+                  titleIcon={grid.titleIcon}
+                  paragraph={grid.paragraph}
+                  history={props.history}
+                />
+              </div>
+            </React.Fragment>
+          )}
 
-      {!props.cart.loading && !loading && cartItems.length === 0 && (
-        <div className="empty-cart">
-          <p>Το καλάθι σας είναι άδειο αυτή τη στιγμή.</p>
+          {!props.cart.loading && !loading && cartItems.length === 0 && (
+            <div className="empty-cart">
+              <p>Το καλάθι σας είναι άδειο αυτή τη στιγμή.</p>
+            </div>
+          )}
         </div>
-      )}
+      </div>
     </div>
   );
 };
