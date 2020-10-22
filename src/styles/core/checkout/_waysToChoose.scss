@@ -102,4 +102,53 @@
       font-size: 1.05rem;
     }
   }
+  .confirm-payment-popup {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    z-index: 4000;
+    background: rgba(0, 0, 0, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .popup-container {
+      background: white;
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: #111;
+      p {
+        margin-bottom: 30px;
+        font-size: 1.4rem;
+      }
+      .popup-buttons {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        button {
+          border: none;
+          outline: none;
+          font-size: 1.1rem;
+          cursor: pointer;
+          &:first-child {
+            margin-right: 30px;
+            background: rgb(60, 108, 211);
+            color: white;
+            &:hover {
+              background: rgb(91, 129, 211);
+            }
+          }
+          &:last-child {
+            background: #ccc;
+            color: #111;
+            &:hover {
+              background: #ddd;
+            }
+          }
+        }
+      }
+    }
+  }
 }

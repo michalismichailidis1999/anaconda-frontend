@@ -16,7 +16,7 @@ export const getExtraPrice = () => {
   let total = 0;
 
   cart.forEach((item: CartItem) => {
-    totalWeight += item.quantity * item.weight;
+    totalWeight += Number((item.quantity * item.weight).toFixed(2));
   });
 
   if(totalWeight <= 2){

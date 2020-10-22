@@ -39,13 +39,16 @@ const Payment = (props: {
   paymentMethod: string;
   payOnDeliveryExtraPrice: number;
 }) => {
-  // const [payOnDeliveryExtraPrice] = useState(2);
   const [choosedWay, setChoosedWay] = useState(1);
   const [cardElementOptions] = useState({
     hidePostalCode: true
   });
   const [orderId, setOrderId] = useState(props.orderId);
   const [buttonIsDisabled, setButtonIsDisabled] = useState(false);
+  const [paymentMethodId, setPaymentMethodId] = useState("");
+  const [showPopup, setShowPopup] = useState(false);
+  const [clientSecret, setClientSecret] = useState("");
+  
   const elements = useElements();
   const stripe = useStripe();
 
@@ -68,7 +71,7 @@ const Payment = (props: {
         const cardElement = elements.getElement(CardElement);
 
         if (cardElement) {
-          const amount = props.orderPrice + props.extraPrice;
+          const amount = props.orderPrice + Number((props.extraPrice).toFixed(2));
 
           const config = {
             headers: {
@@ -116,8 +119,11 @@ const Payment = (props: {
               billing_details:  billingDetailsWithEmail
             });
 
+
             if (paymentMethod.paymentMethod) {
-              props.payWithCard(res.data, paymentMethod.paymentMethod.id);
+              setClientSecret(res.data);
+              setPaymentMethodId(paymentMethod.paymentMethod.id);
+              setShowPopup(true);
             }
           }else{
             const paymentMethod = await stripe.createPaymentMethod({
@@ -126,8 +132,11 @@ const Payment = (props: {
               billing_details:  billingDetails
             });
 
+
             if (paymentMethod.paymentMethod) {
-              props.payWithCard(res.data, paymentMethod.paymentMethod.id);
+              setClientSecret(res.data);
+              setPaymentMethodId(paymentMethod.paymentMethod.id);
+              setShowPopup(true);
             }
           }
           
@@ -150,6 +159,17 @@ const Payment = (props: {
       props.cardPaymentError();
     }
   };
+
+  const pay = () => {
+    setShowPopup(false);
+    props.payWithCard(clientSecret, paymentMethodId);
+  }
+
+  const cancelCardPayment = () => {
+    setShowPopup(false);
+    setButtonIsDisabled(false);
+    props.cardPaymentError();
+  }
 
   const handleOnPaymentWithoutCardChoice = () => {
     props.orderDone();
@@ -259,6 +279,17 @@ const Payment = (props: {
           </div>
         )}
       </div>
+
+      {showPopup && <div className="confirm-payment-popup">
+        <div className="popup-container">
+          <p>Για να ολοκληρώσετε την πληρωμή πατήστε το κουμπί</p>
+
+          <div className="popup-buttons">
+            <button onClick={() => pay()}>Πληρωμή</button>
+            <button onClick={() => cancelCardPayment()}>Ακύρωση</button>
+          </div>
+        </div>
+      </div>}
 
       <button
         className={buttonIsDisabled ? "btn is-disabled" : "btn"}

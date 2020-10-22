@@ -37,6 +37,20 @@
         font-size: 0.95rem;
       }
     }
+    .ways-to-choose {
+      .confirm-payment-popup {
+        .popup-container {
+          p {
+            font-size: 1.1rem;
+          }
+          .popup-buttons {
+            button {
+              font-size: 0.9rem;
+            }
+          }
+        }
+      }
+    }
   }
 }
 
@@ -100,6 +114,21 @@
     .form-error {
       width: 350px;
     }
+    .ways-to-choose {
+      .confirm-payment-popup {
+        .popup-container {
+          padding: 15px;
+          p {
+            font-size: 0.95rem;
+          }
+          .popup-buttons {
+            button {
+              font-size: 0.8rem;
+            }
+          }
+        }
+      }
+    }
   }
 }
 
@@ -153,6 +182,26 @@
       .card-element-container {
         width: 280px;
         margin-left: -15px;
+      }
+
+      .confirm-payment-popup {
+        .popup-container {
+          width: 90%;
+          padding: 10px;
+          p {
+            font-size: 0.85rem;
+            width: 100%;
+            text-align: center;
+          }
+          .popup-buttons {
+            button {
+              font-size: 0.7rem;
+              &:first-child {
+                margin-right: 10px;
+              }
+            }
+          }
+        }
       }
     }
   }
