@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import SignUpForm from "./form/SignUpForm";
 import { validateEmail } from "../../../helpers";
 import { State } from "../../../interfaces";
-import { setError } from "../../../actions/formError";
+import { setError, removeError } from "../../../actions/formError";
 import gsap, { TimelineLite, Power4 } from "gsap";
 
 gsap.registerPlugin();
@@ -14,6 +14,7 @@ const SignUp = (props: {
   errorOccured: boolean;
   errorMessage: string;
   setError: Function;
+  removeError:Function;
 }) => {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -39,6 +40,8 @@ const SignUp = (props: {
     );
 
     document.querySelector("footer")!.classList.remove("no-mt-footer");
+
+    return () =>  props.removeError()
   }, []);
 
   const handleSubmit = () => {
@@ -138,4 +141,4 @@ const mapStateToProps = (state: State) => ({
   errorMessage: state.formError.errorMessage,
 });
 
-export default connect(mapStateToProps, { signup, setError })(SignUp);
+export default connect(mapStateToProps, { signup, setError, removeError })(SignUp);

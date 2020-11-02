@@ -3,7 +3,7 @@ import SignInForm from "./form/SignInForm";
 import gsap, { TimelineLite, Power4 } from "gsap";
 import { validateEmail } from "../../../helpers";
 import { State } from "../../../interfaces";
-import { setError } from "../../../actions/formError";
+import { setError, removeError } from "../../../actions/formError";
 import { connect } from "react-redux";
 import { signin } from "../../../actions/user";
 import {useHistory} from 'react-router-dom';
@@ -15,6 +15,7 @@ const SignIn = (props: {
   errorOccured: boolean;
   errorMessage: string;
   signin: Function;
+  removeError:Function;
 }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -39,6 +40,8 @@ const SignIn = (props: {
     );
 
     document.querySelector("footer")!.classList.remove("no-mt-footer");
+
+    return () => props.removeError();
   }, []);
 
   const handleSubmit = () => {
@@ -108,4 +111,4 @@ const mapStateToProps = (state: State) => ({
   errorMessage: state.formError.errorMessage,
 });
 
-export default connect(mapStateToProps, { setError, signin })(SignIn);
+export default connect(mapStateToProps, { setError, signin, removeError })(SignIn);

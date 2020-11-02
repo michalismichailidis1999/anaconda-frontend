@@ -28,6 +28,7 @@ const SignUpForm = (props: {
       e.preventDefault();
       props.handleSubmit();
     }}
+    id="signup"
   >
     <h1>
       Εγγραφή Χρήστη <i className="fas fa-file-signature"></i>

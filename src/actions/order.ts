@@ -56,7 +56,8 @@ export const notifyBothAdminAndUserAboutTheOrder = (
   email: string,
   products: Object,
   userDetails: Object,
-  customerName: string
+  customerName: string,
+  paymentMethod:string
 ) => async (dispatch: Dispatch) => {
   try {
     const config = {
@@ -73,6 +74,7 @@ export const notifyBothAdminAndUserAboutTheOrder = (
       products,
       userDetails,
       customerName,
+      paymentMethod
     });
 
     await axios.post(`${API}/order/send_notification`, body, config);

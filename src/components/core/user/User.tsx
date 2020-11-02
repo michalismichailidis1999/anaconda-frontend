@@ -16,10 +16,20 @@ const User = (props: {
   userId: string;
   token: string;
   getTotalPages: Function;
+  firstName: string
 }) => {
   const [choosed, setChoosed] = useState(0);
+  const [firstName, setFirstName] = useState("");
 
   useEffect(() => {
+    if(props.firstName[props.firstName.length - 1] === "ς" || props.firstName[props.firstName.length - 1] === "Σ"){
+      let name = props.firstName.slice(0, props.firstName.length - 1);
+
+      setFirstName(name);
+    }else{
+      setFirstName(props.firstName);
+    }
+
     let search = window.location.search;
 
     if (search === "?my_orders") {
@@ -47,7 +57,7 @@ const User = (props: {
             {choosed === 0 && (
               <div className="welcome-message">
                 <h2>
-                  Καλωσόρισες Μιχάλη! <br />
+                  Καλωσόρισες {firstName}! <br />
                   Χαιρόμαστε που σε έχουμε πάλι πίσω.
                   <span role="img" aria-label="face">
                     😄
@@ -70,7 +80,8 @@ const User = (props: {
 
 const mapStateToProps = (state: State) => ({
   userId: state.user.user.id,
-  token: state.user.token
+  token: state.user.token,
+  firstName: state.user.user.first_name
 });
 
 export default connect(mapStateToProps, { removeError, getTotalPages })(User);

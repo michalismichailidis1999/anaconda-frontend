@@ -22,6 +22,7 @@ const SignInForm = (props: {
       e.preventDefault();
       props.handleSubmit();
     }}
+    id="signin"
   >
     <h1>
       Σύνδεση Χρήστη <i className="fas fa-user"></i>

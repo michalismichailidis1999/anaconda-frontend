@@ -62,7 +62,8 @@ const OrderCompletedMessage = (props: {
       props.email,
       props.cart,
       userDetails,
-      props.customerName
+      props.customerName,
+      props.paymentMethod
     );
   };
 

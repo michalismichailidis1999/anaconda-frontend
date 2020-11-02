@@ -8,7 +8,8 @@ const middleware = [thunk];
 export const store = createStore(
   rootReducer,
   {},
-  composeWithDevTools(applyMiddleware(...middleware))
+  // composeWithDevTools(applyMiddleware(...middleware))
+  applyMiddleware(...middleware)
 );
 
 export const API = process.env.REACT_APP_API_URL;
