@@ -69,6 +69,7 @@ const Shop = (props: {
 
   return (
     <div className="shop layout">
+
       <ShopTop
         page={page}
         query={query}
@@ -116,6 +117,7 @@ const Shop = (props: {
           </div>
         )}
       </div>
+
     </div>
   );
 };

@@ -1,8 +1,8 @@
 .shop {
-  min-height: 550px;
+  min-height: 650px;
   .no-products-found {
     p {
-      margin-top: 20px;
+      margin-top: 50px;
       font-size: 1.4rem;
       color: #222;
       font-family: "Oswald", sans-serif;
@@ -263,6 +263,11 @@
         }
       }
     }
+    .no-products-found {
+      p {
+        font-size: 1.1rem;
+      }
+    }
   }
 }
 
@@ -314,6 +319,11 @@
 
 @media (max-width: 400px) {
   .shop {
+    .no-products-found {
+      p {
+        font-size: .95rem;
+      }
+    }
     .shop-top {
       .search-bar .input-group input {
         font-size: 0.75rem;
