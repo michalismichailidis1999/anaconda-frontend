@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from "react";
 import gsap, { TimelineLite, Power4 } from "gsap";
-import image1 from "../../../images/slides/slide1.png";
-import image2 from "../../../images/slides/slide2.png";
 import { connect } from "react-redux";
 import { State, AppState } from "../../../interfaces";
 import { setActiveSlide } from "../../../actions/app";
@@ -73,11 +71,11 @@ const Slides = (props: { appState: AppState; setActiveSlide: Function }) => {
     <div className="slides">
       <div className="slide-img">
         <img
-          src={image1}
+          src="https://anakontaskydra.fra1.digitaloceanspaces.com/slide1.png"
           alt="Slide 1"
           className={active === 1 ? "slide1" : "slide1 not-active"}
         />
-        <img src={image2} alt="Slide 1" className="slide2" />
+        <img src="https://anakontaskydra.fra1.digitaloceanspaces.com/slide2.png" alt="Slide 2" className="slide2" />
       </div>
 
       <div className="img-navigation">

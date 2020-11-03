@@ -27,7 +27,6 @@ const AdminLogin = (props: {
     if (isAuthenticated) {
       props.history.push("/admin/dashboard");
     }
-    console.log(1);
   }, [isAuthenticated]);
 
   useEffect(() => {

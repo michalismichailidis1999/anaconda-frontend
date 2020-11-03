@@ -117,6 +117,7 @@ export const getProduct = (productId: string, userId: string) => async (
 
     dispatch({ type: GET_PRODUCT, payload: res.data });
   } catch (err) {
+    console.log(err);
     alert("Κάτι πήγε στραβά. Δοκίμασε να ανανεώσεις την σελίδα.");
   }
 };
