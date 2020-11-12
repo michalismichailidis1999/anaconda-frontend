@@ -28,9 +28,9 @@ const ShowProducts = (props: {
     { text: "Όλα", choosed: true },
     { text: "Σε Προσφορά", choosed: false },
     { text: "Χωρίς Προσφορά", choosed: false },
-    { text: "< 50$", choosed: false },
-    { text: "> 50$ & < 100$", choosed: false },
-    { text: "> 100$", choosed: false },
+    { text: "< 50€", choosed: false },
+    { text: "> 50€ & < 100€", choosed: false },
+    { text: "> 100€", choosed: false },
   ]);
 
   const searchValues = ["all", "sale", "without_sale", "ltf", "gtf_lth", "gth"];

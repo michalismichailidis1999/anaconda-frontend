@@ -133,6 +133,19 @@
       color: rgb(201, 201, 102);
     }
   }
+
+  .upload-image-btn{
+    display: block;
+    width: 50%;
+    height: 40px;
+    margin: 0 auto;
+    color: white;
+    background: rgb(64, 113, 204);
+    font-size: 1rem;
+    &:hover{
+      background:  rgb(99, 145, 230);
+    }
+  }
 }
 
 @keyframes required-popup {

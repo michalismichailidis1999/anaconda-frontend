@@ -63,7 +63,7 @@ const Table = (props: {
                   <td>{p.name}</td>
                   <td>{p.category}</td>
                   <td>{p.code}</td>
-                  <td>{p.price}$</td>
+                  <td>{p.price}€</td>
                   <td>{p.weight}kg</td>
                   <td className="stars">
                     {p.rate} <i className="fas fa-star"></i>

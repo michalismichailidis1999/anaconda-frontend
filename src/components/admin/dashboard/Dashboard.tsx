@@ -12,6 +12,7 @@ import Products from "../products/Products";
 import Categories from "../categories/Categories";
 import Users from "../users/Users";
 import Messages from "../messages/Messages";
+import UploadImage from "../productImages/UploadImage";
 
 const Dashboard = (props: {
   setIsOnAdminArea: Function;
@@ -37,7 +38,11 @@ const Dashboard = (props: {
       setChoosed("products");
     } else if (query.split("&")[0] === "?view_categories") {
       setChoosed("categories");
+    }else if (query.split("&")[0] === "?upload_image") {
+      console.log("here");
+      setChoosed("upload_image");
     }
+    
 
     if (!props.isOnAdminArea) {
       props.setIsOnAdminArea(true);
@@ -65,6 +70,8 @@ const Dashboard = (props: {
         {choosed === "users" && <Users />}
 
         {choosed === "messages" && <Messages />}
+
+        {choosed === "upload_image" && <UploadImage/>}
       </div>
     </div>
   );

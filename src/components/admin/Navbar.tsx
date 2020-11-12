@@ -88,6 +88,12 @@ const Navbar = (props: {
         >
           Μηνύματα <i className="fas fa-envelope"></i>
         </li>
+        <li onClick={() => {
+          history.push("/admin/dashboard?upload_image");
+          props.handleNavbarChange("upload_image");
+        }}>
+          Ανέβασε Φωτογραφία <i className="fas fa-images"></i>
+        </li>
         <li onClick={() => props.logOut()}>
           Αποσύνδεση <i className="fas fa-power-off"></i>
         </li>

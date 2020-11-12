@@ -250,7 +250,7 @@ const CreateProduct = (props: {
       </div>
 
       <div className="input-group">
-        <label>Φωτογραφία 1 <span className="required">*Υποχρεωτικό</span></label>
+        <label>Φωτογραφία 1</label>
 
         <div className="image-displayer" onClick={() => 
           {
