@@ -21,7 +21,7 @@ const Rates = (props: { rates: Rate[] }) => {
 
       <div className="board">
         <div className="rate-names">
-          <span>Τέλιο</span>
+          <span>Τέλειο</span>
           <span>Καλό</span>
           <span>Μέτριο</span>
           <span>Κακό</span>

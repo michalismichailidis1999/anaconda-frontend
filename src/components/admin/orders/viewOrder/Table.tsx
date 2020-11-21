@@ -29,7 +29,7 @@ const Table = (props: { products: OrderProductInAdminArea[] }) => {
             <td>{product.name}</td>
             <td>{product.category}</td>
             <td>{product.code}</td>
-            <td>{product.price}$</td>
+            <td>{product.price}€</td>
             <td>{product.quantity}</td>
             <td>{product.weight}kg</td>
           </tr>
