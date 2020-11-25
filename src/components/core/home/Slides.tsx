@@ -71,11 +71,11 @@ const Slides = (props: { appState: AppState; setActiveSlide: Function }) => {
     <div className="slides">
       <div className="slide-img">
         <img
-          src="https://anakontaskydra.fra1.digitaloceanspaces.com/slide1.png"
+          src="https://anakonta-skydra.fra1.digitaloceanspaces.com/slide1.png"
           alt="Slide 1"
           className={active === 1 ? "slide1" : "slide1 not-active"}
         />
-        <img src="https://anakontaskydra.fra1.digitaloceanspaces.com/slide2.png" alt="Slide 2" className="slide2" />
+        <img src="https://anakonta-skydra.fra1.digitaloceanspaces.com/slide2.png" alt="Slide 2" className="slide2" />
       </div>
 
       <div className="img-navigation">
