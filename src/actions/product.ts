@@ -20,7 +20,7 @@ export const getNewProducts = () => async (dispatch: Dispatch) => {
   try {
     const res = await axios.get(`${API}/products?sortBy=DESC&limit=8`);
 
-    dispatch({ type: GET_NEW_PRODUCTS, payload: { products: res.data } });
+    dispatch({ type: GET_NEW_PRODUCTS, payload: res.data });
   } catch (err) {
     alert("Κάτι πήγε στραβά. Δοκίμασε να ανανεώσεις την σελίδα.");
   }
@@ -32,9 +32,8 @@ export const getBestSellers = () => async (dispatch: Dispatch) => {
       `${API}/products?filter=sold&sortBy=DESC&limit=8`
     );
 
-    dispatch({ type: GET_BEST_SELLERS, payload: { products: res.data } });
+    dispatch({ type: GET_BEST_SELLERS, payload: res.data });
   } catch (err) {
-    alert("Κάτι πήγε στραβά. Δοκίμασε να ανανεώσεις την σελίδα.");
   }
 };
 
@@ -42,9 +41,8 @@ export const getSales = () => async (dispatch: Dispatch) => {
   try {
     const res = await axios.get(`${API}/products?filter=sale&limit=8`);
 
-    dispatch({ type: GET_SALES, payload: { products: res.data } });
+    dispatch({ type: GET_SALES, payload: res.data });
   } catch (err) {
-    alert("Κάτι πήγε στραβά. Δοκίμασε να ανανεώσεις την σελίδα.");
   }
 };
 
@@ -56,7 +54,7 @@ export const getFilteredProducts = (query: string) => async (
 
     const res = await axios.get(`${API}/products${query}`);
 
-    dispatch({ type: GET_FILTERED_PRODUCTS, payload: { products: res.data } });
+    dispatch({ type: GET_FILTERED_PRODUCTS, payload: res.data });
   } catch (err) {
     alert("Κάτι πήγε στραβά. Δοκίμασε να ανανεώσεις την σελίδα.");
   }

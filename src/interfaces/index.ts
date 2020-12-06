@@ -130,6 +130,7 @@ export interface ProductState {
   productCategory: string;
   myProductRate: number;
   categories: Category[];
+  pages: number;
 }
 
 export interface Category {

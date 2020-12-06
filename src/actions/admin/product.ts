@@ -34,7 +34,6 @@ export const getProductsTotalCount = (userId: string, token: string) => async (
 
     dispatch({ type: GET_PRODUCTS_TOTAL_COUNT, payload: res.data });
   } catch (err) {
-    alert("Κάτι πήγε στραβά. Δοκίμασε να ανανεώσεις την σελίδα.");
   }
 };
 

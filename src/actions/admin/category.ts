@@ -31,7 +31,6 @@ export const getCategoriesTotalCount = (
 
     dispatch({ type: GET_CATEGORIES_TOTAL_COUNT, payload: res.data });
   } catch (err) {
-    alert("Κάτι πήγε στραβά. Δοκίμασε να ανανεώσεις την σελίδα.");
   }
 };
 

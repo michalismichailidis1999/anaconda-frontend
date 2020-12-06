@@ -58,7 +58,6 @@ export const getTotalProfit = (userId: string, token: string) => async (
 
     dispatch({ type: GET_TOTAL_PROFIT, payload: res.data });
   } catch (err) {
-    alert("Κάτι πήγε στραβά. Δοκίμασε να ανανεώσεις την σελίδα.");
   }
 };
 
@@ -79,7 +78,6 @@ export const getAvgMonthlyProfit = (userId: string, token: string) => async (
 
     dispatch({ type: GET_AVG_MONTHLY_PROFIT, payload: res.data });
   } catch (err) {
-    alert("Κάτι πήγε στραβά. Δοκίμασε να ανανεώσεις την σελίδα.");
   }
 };
 
@@ -103,7 +101,6 @@ export const getLineChartData = (userId: string, token: string) => async (
       payload: { lineChartData: res.data },
     });
   } catch (err) {
-    alert("Κάτι πήγε στραβά. Δοκίμασε να ανανεώσεις την σελίδα.");
   }
 };
 
@@ -124,7 +121,6 @@ export const getPieChartData = (userId: string, token: string) => async (
 
     dispatch({ type: GET_PIE_CHART_DATA, payload: { pieChartData: res.data } });
   } catch (err) {
-    alert("Κάτι πήγε στραβά. Δοκίμασε να ανανεώσεις την σελίδα.");
   }
 };
 

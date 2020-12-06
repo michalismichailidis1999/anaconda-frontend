@@ -30,7 +30,6 @@ export const getMessagesTotalCount = (userId: string, token: string) => async (
 
     dispatch({ type: GET_MESSAGES_TOTAL_COUNT, payload: res.data });
   } catch (err) {
-    alert("Κάτι πήγε στραβά. Δοκίμασε να ανανεώσεις την σελίδα.");
   }
 };
 

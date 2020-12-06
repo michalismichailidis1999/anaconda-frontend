@@ -16,6 +16,7 @@ const Shop = (props: {
   history: History;
   initialQuery: Query;
   setQueryBackToDefault: Function;
+  pages: number
 }) => {
   const [page, setPage] = useState(1);
   const [query, setQuery] = useState(props.initialQuery);
@@ -25,16 +26,13 @@ const Shop = (props: {
   const [search, setSearch] = useState("");
 
   const getPages = () => {
-    let pages = Math.ceil(props.filteredProducts.length / 20);
+    let pages = [];
 
-    let pagesArr = [];
-
-    for (let i = 1; i <= pages; i++) {
-      pagesArr.push(i);
+    for(let i = 1; i <= props.pages; i++){
+      pages.push(i);
     }
-
-    return pagesArr;
-  };
+    return pages;
+  }
 
   const getProducts = () => {
     props.getFilteredProducts(queryString);
@@ -90,13 +88,16 @@ const Shop = (props: {
 
             <div
               className="pagination"
-              style={getPages().length > 1 ? {} : { display: "none" }}
+              style={props.pages > 1 ? {} : { display: "none" }}
             >
               {getPages().map((p, i) => (
                 <div
                   key={i}
                   className={page === p ? "page active" : "page"}
-                  onClick={() => setPage(p)}
+                  onClick={() => {
+                    setPage(p);
+                    scrollOnTopOfThePage()
+                  }}
                 >
                   <span>{p}</span>
                 </div>
@@ -125,7 +126,8 @@ const Shop = (props: {
 const mapStateToProps = (state: State) => ({
   filteredProducts: state.product.filtered_products,
   loading: state.product.loading,
-  initialQuery: state.app.query
+  initialQuery: state.app.query,
+  pages: state.product.pages
 });
 
 export default connect(mapStateToProps, {

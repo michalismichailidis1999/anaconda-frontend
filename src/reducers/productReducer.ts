@@ -52,6 +52,7 @@ const initialState: ProductState = {
   productCategory: "",
   myProductRate: 0,
   categories: [],
+  pages: 0
 };
 
 const productReducer = (
@@ -67,6 +68,7 @@ const productReducer = (
       my_rate: number;
       commentId: number;
       categories: Category[];
+      pages: number;
     };
   }
 ) => {
@@ -80,7 +82,7 @@ const productReducer = (
     case GET_SALES:
       return { ...state, sales: payload.products };
     case GET_FILTERED_PRODUCTS:
-      return { ...state, filtered_products: payload.products, loading: false };
+      return { ...state, filtered_products: payload.products, pages:payload.pages, loading: false };
     case GET_RECOMMENDED_PRODUCTS:
       return { ...state, recommended_products: payload.products };
     case LOADING_PRODUCTS:
