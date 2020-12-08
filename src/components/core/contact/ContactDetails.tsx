@@ -12,12 +12,12 @@ const ContactDetails = () => {
     },
     {
       icon: "fas fa-phone",
-      detail: "+30 690 812 3254",
+      detail: "+30 697 808 6475",
       breakLineString: "23810 83077",
     },
     {
       icon: "fas fa-envelope",
-      detail: "john@gmail.com",
+      detail: "anakonta2011@hotmail.com",
       breakLineString: "",
     },
   ]);
